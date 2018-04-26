@@ -1,0 +1,520 @@
+%本刊的标点符号均使用英文标点,您可以在编译前设置标点形式
+\documentclass{sxjzartcn}          % 调用sxjzartcn.cls
+
+%----作者自定义----
+%----作者自定义结束----
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%------------------ 编辑部提供的信息 ------------------------%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\pubvol}{46} % 卷号
+\newcommand{\pubno}{4} % 期号
+\newcommand{\pubyear}{2017} % 出版年份
+\newcommand{\pubmonth}{7} % 出版月份
+\setcounter{page}{583} % 起始页码
+\newcommand{\receivedate}{2015-08-25} % 论文收到日期
+\newcommand{\revisedate}{2015-12-23} % 论文修改日期
+\newcommand{\doino}{10.11845/sxjz.2015156b} % doi号
+\newcommand{\paperid}{1000-0917(2017)04-0583-07} % 文章编号
+\newcommand{\documentcode}{A} % 文献标识码
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%-------------------- 作者提供的信息 ------------------------%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+\newcommand{\cntitle}{内交换子群满足某些条件的亚循环$p$群} % 题目
+\newcommand{\cnauthor}{王丽芳} % 作者
+\newcommand{\cninstitution}{山西师范大学数学与计算机科学学院, 临汾, 山西, 041004} % 研究机构
+\newcommand{\cninstitutionadjpos}{3.2cm} % 调节研究机构显示的位置,  前面加入\hspce{\cninstitutionadjpos}, 默认为0cm
+\newcommand{\cnabstract}{本文决定了非正规内交换子群均同阶的亚循环$2$群以及非正规内交换子群的正规闭包是极大子群的亚循环$p$群.  从而解决了Berkovich提出的两个问题.} % 摘要
+\newcommand{\cnkeywords}{亚循环$p$群; 内交换子群; 非正规子群的正规闭包} % 关键词
+\newcommand{\MR}{20D15} % MR(2010)主题分类
+\newcommand{\CL}{O152.1} % 中图分类号
+\newcommand{\titlemark}{王丽芳:~内交换子群满足某些条件的亚循环$p$群}  % 页眉用, 如有多位作者,请写为 第一作者姓名等
+\newcommand{\fundinfo}{国家自然科学基金(No.\ 11371232, No. 11101252)和山西省自然科学基金(No.\ 2013011001).} % 首页脚注: 如 基金项目:国家自然科学基金资助项目(No.\ 61421062). 若无, 则删除 \EditorNote{基金项目:~\fundinfo} 命令
+\newcommand{\authorinfo}{lfwang@163.com} % 首页脚注: 作者邮箱
+\newcommand{\authorthanks}{作者在此感谢审稿人提出的宝贵建议, 感谢张勤海教授的悉心指导.} % 致谢, 若无, 则删除文档中的 \Thanks{\authorthanks} 命令
+%%
+\newcommand{\entitle}{Finite Metacyclic ${\bm p}$-groups All of Whose Minimal Non-abelian Subgroups Satisfy Some Properties} % Title
+\newcommand{\enauthor}{WANG Lifang} % Author
+\newcommand{\eninstitution}{School of Mathematics and Computer Science, Shanxi Normal University, Linfen, Shanxi, 041004, P. R. China} % Institution
+\newcommand{\eninstitutionadjpos}{0.7cm} % used for adding \hspce{\eninstitutionadjpos} before \eninstitutionto adajust the position, default is 0cm
+\newcommand{\enabstract}{We classify finite metacyclic $p$-groups all of whose minimal non-abelian subgroups have the same order, and finite metacyclic $p$-groups all of whose normal closures of non-normal minimal non-abelian subgroups are maximal. This solves two problems proposed by Berkovich.} % Abstract
+\newcommand{\enkeywords}{metacyclic $p$-group; minimal non-abelian subgroup; normal closure of a non-normal subgroup} % Keywords
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%
+\EditorNote{收稿日期: \,\receivedate. \ 修改稿收到日期: \,\revisedate.}  % 首页脚注: 论文收稿修改以及接收时间
+\EditorNote{基金项目: \fundinfo} % 首页脚注: 基金项目, 若无可注释
+\EditorNote{E-mail:~\authorinfo} % 首页脚注: 作者邮箱
+\BeginTitle % 首页页眉
+\CTitle{\cntitle}  % 题目
+\CAuthor{\cnauthor} % 作者
+\CInstitution{\cninstitution}{\cninstitutionadjpos} % 机构, 第二个参数用于调整位置
+\CAbstract{\cnabstract} % 摘要
+\CKeywords{\cnkeywords} % 关键词
+\CMRCLClass{\MR}{\CL} % MR(2010) 主题分类、中图分类号、文献标志码、文章编号
+\EndTitle
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%% 正文 %%%%%%%%%%%%%%%%%%%%%%%%%%%
+\Section{引言}
+称群$G$为亚循环的, 如果它有循环正规子群$A= \langle a \rangle$使商群$G/A$亦为循环群. 亚循环群是有限群的一个重要群类. 对于亚循环$p$群, 很多群论学者做了大量的研究.  Newman 和徐明曜于1987年利用$p$群生成算法\supercite{[5]}分类了亚循环$p$群, 见文~\cite{[6],[7]}. 对于$p=2$的情形, 徐明曜和张勤海\supercite{[10]}完全独立于$p$群生成算法进行了分类, 本文就是在~\cite{[6],[7],[10]}的基础上进行研究的.
+
+称群$G$是内交换群, 若$G$的每个子群交换, 但$G$本身不交换. R\'{e}dei于1947年在文\cite{[8]}中分类了内交换$p$群. 内交换子群在有限$p$群的研究中具有非常重要的作用.
+许多群论学者利用一个群的内交换子群来研究该群的结构. 例如: Janko在文~\cite[定理90.1]{[3]}中研究了所有内交换子群均为$2^3$的有限$2$群. 进一步地, 他在文~\cite[推论A.17.3]{[3]}中分类了所有内交换子群均同构于$Q_8$的$2$群, 在文\cite[定理10.33]{[2]}中分类了所有内交换子群均同构于$D_8$的$2$群. 在此基础上, \linebreak Berkovich和 Janko 在他们的$p$ 群专著\cite{[4]}中提出如下问题:
+
+{\bf 问题~3010}\quad 分类内交换子群均同阶的亚循环2群.
+
+对于亚循环群, 他们还提出了如下问题:
+
+{\bf 问题~2945}\quad  分类非正规的内交换子群$H$均满足$|G: H^G|=p$的亚循环$p$群.
+
+本文研究了上述两个问题, 决定了非正规内交换子群均同阶的亚循环$2$群以及非正规内交换子群的正规闭包是极大子群的亚循环$p$群.
+
+\Section{预备知识}
+\begin{lemma}[{\textsuperscript{\cite[定理]{[7]}}}]\label{lemma1.1}
+设$p$是奇素数, $G$是亚循环$p$群, 则
+$$G=\big\langle {a, b}\,|\, a^{p^{r+s+u}}=1,\
+b^{p^{r+s+t}}=a^{p^{r+s}},\  a^b=a^{1+p^{r}}\big\rangle ,$$
+其中$r,s,t,u$为非负整数, 且满足$r\geq1, u\leq r$. 对于参数$r,s, t,
+u$的不同取值,对应的亚循环群互不同构. 用$\langle r,s,t,u;p\rangle$来记这个群.
+\end{lemma}
+\medskip
+
+\begin{lemma}[\supercite{[9]}{定理~3.1}\textsuperscript{,}\supercite{[10]}{定理2.2.10}]\label{lemma1.2}
+设$G$是亚循环$2$群, 则$G$同构于下列群之一:
+
+{\rm(I)} $G$有循环极大子群;
+
+{\rm(I.1)}\ $2^n$阶循环群: $G=\langle a \,|\, a^{p^n}=1\rangle, n\ge 1$;
+
+{\rm(I.2)}\ $(2^{n-1},2)$型交换群: $G=\langle a, b \,|\,  a^{p^{n-1}}=b^p=1, [a, b]=1\rangle$, $n\ge 2$;
+
+{\rm(I.3)}\ 广义四元数群: $G=\langle a, b\,|\, a^{2^{n-1}}=1, b^2=a^{2^{n-2}}, a^b=a^{-1}\rangle$,  $n\ge 3$;
+
+{\rm(I.4)}\ 二面体群: $G=\langle  a, b \,|\,  a^{2^{n-1}}=1, b^2=1, a^b=a^{-1}\rangle$, $n\ge 3$;
+
+{\rm(I.5)}\  内交换群$2$群: $G=\langle  a, b\,|\,  a^{2^{n-1}}=1, b^2=1, a^b=a^{1+2^{n-2}}\rangle$, $n\ge 4$;
+
+{\rm(I.6)}\ 半二面体群: $G=\langle a, b \,|\, a^{2^{n-1}}=1, b^2=1, a^b=a^{-1+2^{n-2}}\rangle$, $n\ge 4$;
+
+{\rm(II)} $G$无循环极大子群;
+
+$\rm{(II.1)}$ {\rm(}通常亚循环群{\rm)}: $G=\langle a, b\,|\, a^{2^{r+s+u}}=1,\, b^{2^{r+s+t}}=a^{2^{r+s}},\, a^b=a^{1+2^{r}}\rangle$,
+其中$r,s,t,u$为非负整数, 满足$r\ge 2,u\le r$;
+
+$\rm{(II.2)}$ {\rm(}例外亚循环群{\rm)}: $G=\langle a, b\,|\,
+a^{2^{r+s+v+t'+u}}=1,\, b^{2^{r+s+t}}=a^{2^{r+s+v+t'}},\,
+a^b=a^{-1+2^{r+v}}\rangle$, 其中$r, s, v, t, t', u$是非负整数, 满足$r\ge
+2,\  t'\le r,\  u\le 1,\ tt'=sv=tv=0$, 且若$t'\ge r-1$, 则$u=0$.
+不同类型的群或者相同类型但不同参数的群互不同构.
+\end{lemma}
+
+下面的亚交换公式在我们的证明过程中非常有用.
+
+\begin{lemma}[\supercite{[10]}{命题~2.1.7--2.1.8}]\label{lemma1.3}
+设$ G$是亚交换群, $ a,b \in G,$ 则
+
+(1) $[a^m, b^n]=\prod_{i=1}^{m}\prod_{j=1}^{n}[ia,jb]^{{m\choose i} {n\choose j}}$, 其中$m,n$为正整数;
+
+(2) $(ab^{-1})^{m}=a^{m}(\prod_{i+j\leq m}[ia,jb]^{\binom{m}{i+j}})b^{-m}$, 其中$m\geq 2$.
+\end{lemma}
+
+\begin{lemma}\label{lemma1.4}
+设$n$是非负整数, $r,l,k$是正整数且$(2,l)=1$. 若$k\geq
+2$, 则$2^{n+2r-1}\mid {{l2^{n}}\choose{k}} 2^{kr}$.
+\end{lemma}
+
+\begin{Proof}
+设$k=k_{1}2^{t}$, 其中$t\geq 0,\ (k_1,2)=1$, 则
+$${{l2^{n}}\choose{k}}=\frac{l2^n}{k}{l2^n-1\choose k-1}=
+\frac{l2^n}{k_12^t}{l2^n-1\choose k-1}=2^{n-t}\frac{l}{k_1}{l2^n-1\choose k-1}.$$
+从而
+$${{l2^{n}}\choose {k}}2^{kr}=\frac{l}{k_1}{l2^n-1\choose k-1}\cdot 2^{n+kr-t}
+=\frac{l}{k_1}{l2^n-1\choose k-1}\cdot 2^{n+rk_12^t-t}.$$
+因而要证明结论, 只需证明 $n+rk_12^t-t\geq n+2r-1$, 即证 $rk_{1}2^{t}\geq 2r+t-1.$ 下面对$t$作归纳.
+
+若$t=0$, 则$k=k_1$, 从而$rk_{1}2^{t}=rk\geq 2r>2r-1$, 结论成立.
+
+
+假设$t-1$时结论成立. 由归纳假设,
+$$rk_{1}2^{t}=(rk_{1}2^{t-1})\cdot 2\geq (2r+t-2)\cdot 2=(2r+t-1)+(2r+t-3)\geq 2r+t-1.$$
+因此, 结论成立.
+\end{Proof}
+
+\begin{lemma}\label{lemma1.5}
+设$G$为通常亚循环$2$群, 则
+$$(b^{i'2^i}a^{j'2^j})^{2^m}=b^{i'2^{i+m}}a^{j'2^{j+m}(1+2^{i+r-1}L_1)},$$ 其中 $L_1$为奇数.
+\end{lemma}
+
+\begin{Proof}
+由引理~\ref{lemma1.3}, 计算得
+\begin{align*}
+(b^{i'2^i}a^{j'2^j})^{2^m}
+&= b^{i'2^{i+m}}a^{j'2^{j+m}}[b^{i'2^i}, a^{-j'2^j}]^{2^m\choose 2}[2b^{i'2^i}, a^{j'2^j}]^{2^m\choose 3}\cdots [(2^m-1)b^{i'2^i}, a^{j'2^j}]^{2^m\choose 2^m}\\
+&= b^{i'2^{i+m}}a^{j'2^{j+m}}\big([a,b^{i'2^i}]^{2^m\choose 2}[a, 2b^{i'2^i}]^{2^m\choose 3}\cdots[a,(2^m-1)b^{i'2^i}]^{2^m\choose 2^m}\big)^{j'2^j}\\
+&\qquad= b^{i'2^{i+m}}a^{j'2^{j+m}}\big(a^{L{2^m\choose 2}}a^{L^2{2^m\choose 3}}\cdots a^{L^{2^m-1}{2^m\choose 2^m}}\big)^{j'2^j}\\
+&\qquad= b^{i'2^{i+m}}a^{j'2^{j}(2^m+L{2^m\choose 2}+L^2{2^m\choose 3}+\cdots+L^{2^m-1}{2^m\choose 2^m})},
+\end{align*}
+其中
+$$L=(1+2^r)^{i'2^i}-1={i'2^i\choose 1}2^r+{i'2^i\choose 2}2^{2r}+\cdots+{i'2^i\choose i'2^i}2^{i'2^ir}.$$
+由引理~\ref{lemma1.4}可知 $$L=2^{i+r}(i'+L'2^{r-1}).$$
+故$$2^m+L{2^m\choose 2}+L^2{2^m\choose 3}+\cdots+L^{2^m-1}{2^m\choose 2^m}=2^m(1+L_12^{i+r-1}).$$
+进而$(b^{i'2^i}a^{j'2^j})^{2^m}= b^{i'2^{i+m}}a^{j'2^{j+m}(1+2^{i+r-1}L_1)}.$
+\end{Proof}
+
+\Section{所有内交换子群均同阶的亚循环${\bm p}$群}
+
+本节研究问题~3010, 即分类内交换子群均同阶的亚循环2群.
+
+
+\begin{lemma}\label{lemma2.1}
+若$G$是有交换极大子群的极大类$p$群，则$G$的所有内交换子群的阶均为$p^{3}$.
+\end{lemma}
+
+
+\begin{Proof}
+设$H$是$G$的内交换子群, 则$|H'|=p$. 由\cite[推论 8.3.2]{[10]}知, $H$
+是极大类群, 故$|H:H'|=p^2$. 从而$|H|=p^3$.
+\end{Proof}
+
+
+由于我们所考虑的群为非交换且非内交换的亚循环群, 由引理~\ref{lemma1.2}和\ref{lemma2.1}可得
+
+
+\begin{theorem}\label{theorem2.1}
+设$G$是有循环极大子群的亚循环$2$群. 若$G$的内交换子群均同阶, 则$G$为极大类$2$群且
+$G$的内交换子群的阶均为$8$.
+\end{theorem}
+
+下面考虑无循环极大子群的亚循环$2$群.
+
+\begin{theorem}\label{theorem2.2}
+若$G$是通常亚循环$2$群, 则$G$所有内交换子群的阶均为$2^{2r+s+t+1}$.
+\end{theorem}
+
+\begin{Proof}
+由引理~\ref{lemma1.2}~(II.1)可知,
+ $$G=\big\langle a, b\,|\,
+ a^{2^{r+s+u}}=1, \ b^{2^{r+s+t}}=a^{2^{r+s}},\
+a^b=a^{1+2^{r}} \big\rangle,$$
+其中$r,s,t,u$为非负整数,\ 满足$r\ge 2,\ u\le r.$
+
+设$H$是$G$的内交换子群, 则$H=\langle b^{i_{1}} a^{j_{1}} , b^{i_{2}} a^{j_{2}} \rangle$. 不妨设
+$ b^{i_{2}}\in \langle b^{i_{1}} \rangle$, 则$b^{i_{2}}=b^{ki_{1}}$, 从而\linebreak $\ (b^{i_{1}} a^{j_{1}})^{-k}b^{i_{2}} a^{j_{2}}\in\langle a\rangle$.
+因而可设$H=\langle b^{i'2^{i}}a^{j'2^{j}},  a^{l'2^{l}}\rangle$, 其中$i',
+j', l'$为奇数, $i,j,l$为非负整数. 下面分两步证明 $|H|=2^{2r+s+t+1}$.
+
+(1) $i+l=s+u-1$.
+
+由于$H$为内交换子群, 故$H'=\langle a^{2^{r+s+u-1}}\rangle$. 于是由引理~\ref{lemma1.4}可得
+$$[a^{l'2^{l}}, b^{i'2^{i}}a^{j'2^{j}}]=[a, b^{i'2^{i}}]^{l'2^{l}}=
+a^{((1+2^r)^{i'2^i}-1)l'2^{l}}=
+a^{2^{r+i+l}l'(i'+2^{r+i-1}L)}=a^{2^{r+s+u-1}},$$
+其中$L$为奇数. 因此 $r+i+l=r+s+u-1$, 即$i+l=s+u-1$.
+
+(2) 由(1)及$u\leq r$可知, $i\leq s+u-1< s+r+t$.
+由引理~\ref{lemma1.5}可得
+$$(b^{i'2^{i}}a^{j'2^{j}})^{2^{r+s+t-i}}=b^{i'2^{r+s+t}}a^{2^{r+s+t-i+j}j'(1+2^{i+r-1}L_1)}
+=a^{i'2^{r+s}+2^{r+s+t-i+j}j'(1+2^{i+r-1}L_1)}.$$
+由于$r+s\geq u+s>l$且$r+s+t-i+j>s+u-1-i=l$, 故
+$$(b^{i'2^{i}}a^{j'2^{j}})^{2^{r+s+t-i}}\in\langle a^{l'2^{l}}\rangle.$$
+于是
+$$|H|=2^{r+s+u-l}2^{r+s+t-i}=2^{2r+2s+u+t-i-l}=2^{2r+s+t+1}.$$
+因此$G$所有内交换子群的阶均为$2^{2r+s+t+1}$.
+\end{Proof}
+
+\begin{theorem}\label{theorem2.3}
+设$G$是例外亚循环$2$群, 则$G$的所有内交换子群同阶当且仅当$s+t'+u\leq 1$. 此时内交换子群的阶为$2^{r+s+t+2}$.
+\end{theorem}
+
+\begin{Proof}
+由引理~\ref{lemma1.2}可知
+$$G=\big\langle a, b\,|\,
+a^{2^{r+s+v+t'+u}}=1,\  b^{2^{r+s+t}}=a^{2^{r+s+v+t'}},\
+a^b=a^{-1+2^{r+v}}\big\rangle,$$ 其中$r, s, v, t, t', u$是非负整数, 满足$r\ge
+2,\ t'\le r,\ u\le 1,\ tt'=sv=tv=0$, 且若$t'\ge r-1$, 则$u=0$.
+
+
+ 必要性.\quad  假设$s+t'+u\geq 2$.
+
+ 取$G$的子群$H=\langle a, b^{2^{s+t'+u-1}}\rangle $和$K=\langle a^{2^{r+s+v+t'+u-2}},b \rangle$.
+由引理~\ref{lemma1.2}计算可知
+$$[ a, b^{2^{s+t'+u-1}}]=a^{(-1+2^{r+v})^{2^{s+t'+u-1}}-1}=a^{2^{r+s+v+t'+u-1}}.$$
+又$$[a^{2^{r+s+v+t'+u-2}},b]=[a,b]^{2^{r+s+v+t'+u-2}}=a^{2^{r+s+v+t'+u-1}},$$
+故$|H'|=|K'|=2$, 进而$H, K$内交换.
+但$|H|=2^{2r+s+t+v+1}$,
+$|K|=2^{r+s+t+2}$.
+由于$G$所有内交换子群同阶, 故$$r+s+t+2=2r+s+t+v+1,$$ 即$r+v=1$.
+这与$r\geq 2$矛盾. 因此, $s+t'+u\leq 1$.
+
+充分性.\quad 设$s+t'+u\leq 1$. 任取$G$的内交换子群$H$, 下证$H$的阶为$2^{r+s+t+2}$.
+
+同定理~\ref{theorem2.2}的讨论, 可设$H=\langle b^{i'2^{i}}a^{j'2^{j}},  a^{l'2^{l}}\rangle$, 其中$i', j', l'$为奇数,
+$i,j,l$为非负整数. 则
+由于$s+t'+u\leq 1$, 故$$[a,b^2]=[a,b]^2[a,2b]=1.$$
+而
+$$[a^{l'2^{l}}, b^{i'2^{i}}a^{j'2^{j}}]=[a, b^{i'2^{i}}]^{l'2^{l}}=a^{2^{r+s+v+t'+u-1}},$$
+因而$i=0$. 且可设$H= \langle ba^{j'2^{j}},a^{l'2^{l}}\rangle $.
+由于
+$$[a^{l'2^{l}},ba^{j'2^{j}}]=[a, b]^{l'2^{l}}=a^{(-2+2^{r+v})l'2^l}=a^{l'2^{l+1}(-1+L_{1}2^{r+v-1})}=a^{2^{r+s+v+t'+u-1}},$$
+其中$L_{1}$是奇数, 故$l=r+s+v+t'+u-2$.
+
+由于$[a,b^2]=1$且$(ba^{j'2^{j}})^2=b^2a^{j'2^{r+v+j}}$, 故
+$$(ba^{j'2^{j}})^{2^{r+s+t}}=(b^2a^{j'2^{r+v+j}})^{2^{r+s+t-1}}=b^{2^{r+s+t}}a^{j'2^{2r+s+t+v+j-1}}=a^{2^{r+s+v+t'}+j'2^{2r+s+t+v+j-1}}.$$
+由$u\leq 1,\  t'\leq r$可得 $$\min\{r+s+v+t', 2r+s+t+v+j-1\}\geq l.$$
+于是$(ba^{j'2^{j}})^{2^{r+s+t}}\in \langle a^{l'2^{l}}\rangle$, 故
+$|H|=2^{r+s+t}2^2=2^{r+s+t+2}.$
+\end{Proof}
+
+
+由定理~\ref{theorem2.1}--~\ref{theorem2.3}即得
+
+\begin{theorem}\label{theorem2.4}
+设$G$是亚循环$2$群. 则$G$的
+所有内交换子群均同阶当且仅当$G$为下列群之一:
+
+$(1)$ 极大类$2$群,
+此时所有内交换子群的阶均为8.
+
+$(2)$ 通常亚循环$2$群,
+此时所有内交换子群的阶均为$2^{2r+s+t+1}$.
+
+$(3)$ 参数满足$s+t'+u\leq 1$的例外亚循环$2$群,
+此时所有内交换子群的阶均为$2^{r+s+t+2}$.
+\end{theorem}
+
+
+对于奇素数阶亚循环群, 类似于定理~\ref{theorem2.2}的证明方法, 容易证明:
+
+\begin{theorem}\label{theorem2.5}
+若$G$是奇数阶亚循环$p$群, 则$G$的所有内交换子群的阶均为$p^{2r+s+t+1}$.
+\end{theorem}
+
+\Section{非正规内交换子群的正规闭包是极大子群的亚循环${\bm p}$群}
+
+下面研究本文的第二个问题, 即所有非正规的内交换子群的正规闭包是极大子群的亚循环$p$群.
+由于亚Hamilton$p$群(每个内交换子群均正规的有限$p$群)已被文\cite{[1]}分类,
+故以下总假设$G$非亚Hamilton $p$群. 首先给出下面几个引理.
+
+
+\begin{lemma}[{\supercite{[1]}{定理~4.2.2}}]\label{lemma3.1}
+设$G$是引理~\ref{lemma1.1}和\ref{lemma1.2}所给出的亚循环$p$群且$|G'|\geq p^{2}$. 则$G$是有限亚$\rm Hamilton$
+$p$群当且仅当$G$是以下互不同构的群之一:
+
+{\rm(1)} 满足$r+1\geq s+u\geq 2$的奇数阶亚循环$p$群;
+
+{\rm(2)} 有循环极大子群的亚循环$2$群: $16$阶二面体群、半二面体群和广义四元数群;
+
+{\rm(3)} 无循环极大子群的满足$r+1\geq s+u\geq 2$的通常亚循环$2$群;
+
+{\rm(4)} 无循环极大子群的满足$r=2,\ s+v+t'+u=1,\ t\geq0$或$r=3,\ s=v=t'=u=0,\ t\geq 0$的例外亚循环$2$群.
+\end{lemma}
+
+\begin{lemma}\label{lemma3.2}
+设$G$是有限$p$群, 则下列陈述等价:
+
+{\rm(1)}\ $G$的任一非正规的内交换子群$H$满足$|G:H^{G}|=p$;
+
+{\rm(2)}\ $G$的任一非正规的非交换子群$H$满足$|G:H^{G}|=p.$
+\end{lemma}
+
+\begin{Proof}
+$(2)\Rightarrow(1)$\quad 显然.
+
+$(1)\Rightarrow(2)$\quad 设$H$为$G$的任一非正规的非交换子群, 由\cite[命题~10.28]{[3]}可知, $H$可由其内交换子群生成. 由于$H\ntrianglelefteq G$, 故存在$H$的内交换子群$K$使得$K\ntrianglelefteq G$. 由题设条件可知$|G:K^{G}|=p.$ 又因为$K^{G} \leq H^{G}$且$H^G<G$, 故$H^{G}=K^{G}$.
+\end{Proof}
+
+
+\begin{lemma}\label{lemma3.3}
+设$G$是有限$p$群,
+若对于$G$的任一非正规的内交换子群$H$均有$|G:H^{G}|=p$,
+则$H^{G}=HG'$.
+\end{lemma}
+
+\begin{Proof}
+由于$ H^{G}$是$G$的极大子群, $G' \leq H^{G}$. 又$H \leq H^{G}
+$, 故$HG'\leq H^{G}. $ 又因为$ HG' \trianglelefteq
+G$且$H^G$是包含$H$的最小正规子群, 故$H^{G}=HG'.$
+\end{Proof}
+
+
+\begin{theorem}\label{theorem3.1}
+若$G$是奇数阶亚循环$p$群, 则$G$所有非正规的内交换子群的正规闭包是极大子群当且仅当$G$满足$r=1$且$s+u=3$.
+\end{theorem}
+
+\begin{Proof}
+由于我们考虑的是非交换且非内交换的群, 故$s+u\geq 2$.
+如果$r+1\geq s+u\geq 2$, 由引理3.1可知$G$是亚Hamilton群.
+因此$s+u> r+1$.
+
+
+必要性.\quad
+考虑$G$的子群$H=\langle a^{p^{s+u-1}}, b\rangle $,由于$[a^{p^{s+u-1}},
+b]=a^{p^{r+s+u-1}}$, 故$H$内交换. 由于$s+u-1\geq r$,
+故$a^{p^r}=[a,b]\not\in H$, 从而$H\ntrianglelefteq G$.
+由引理~\ref{lemma3.3}知, $H^{G}=HG'=\langle a^{p^r}\rangle\langle b\rangle.$
+于是$|H^G|=p^{r+2s+t+u}$. 又因为$|G:H^G|=p$且$|G|=p^{2r+2s+t+u}$,
+故$r=1$.
+
+下证 $s+u=3$.
+
+由于$r=1$且$s+u>r+1$, 故$s+u>2$. 假设$s+u\geq 4$.
+
+令$$H=\langle b^pa,
+b^{p^{s+u-1}}\rangle,\quad L=\langle b^pa, b^{p^2}\rangle.$$
+由引理~\ref{lemma1.3}, 计算得
+$$(b^pa)^p=b^{p^2}a^p[b^p,a^{-1}]^{p\choose 2}\cdots[(p-1)b^p,a^{-1}]^{p\choose p}=b^{p^2}a^{p(1+lp^2)},\eqno{(*)}$$
+其中$(p, l)=1$.
+因此, $a^p\in L$. 于是$L\unlhd G$.
+由于$[b^pa, b^{p^{s+u-1}}]=a^{p^{s+u}}$, 故$H$内交换.
+
+计算可知, $|G:L|=p^2$. 由定理~\ref{theorem2.5}可知, $|G:H|=p^{s+u-1}$. 由于$s+u\geq 4$, 故
+$H<L$. 由题设可知, $H\unlhd G$. 因而
+$$[b^pa,b]=[a,b]=a^{p}\in H.$$
+由$(*)$式可知, $b^{p^2}\in H$.
+于是$H=L$, 矛盾.
+故$s+u=3$.
+
+充分性.\quad 设$r=1$且$s+u=3$, 此时$|G|=p^{8+t-u}$.
+任取$G$的非正规的内交换子群$H$, 由定理~\ref{theorem2.5}可知,
+$|H|=p^{6+t-u}$. 因而$H$为$G$的$2$-极大子群.
+设$M$为$G$的包含$H$的极大子群, 则$M\unlhd G$,
+因而$H^G=M$且$|G:H^G|=p$.
+\end{Proof}
+
+
+\begin{theorem}\label{theorem3.2}
+设$G$是有循环极大子群的$2$群.
+若$G$所有非正规内交换子群的正规闭包均是极大子群,
+则$G$是极大类$2$群.
+\end{theorem}
+
+\begin{Proof}
+由于我们所考虑的群为非交换且非内交换的群, 由引理~\ref{lemma1.2}, $G$为极大类2群且\\$|G|\geq 2^5$.
+
+任取$G$的非正规的内交换子群$H$, 则$H\neq G'$.
+由于$|G:G'|=4$, 由引理~\ref{lemma3.3}可知, $H^G=HG'$为$G$的极大子群.
+\end{Proof}
+
+
+\begin{theorem}\label{theorem3.3}
+设$G$是通常亚循环$2$群,
+则$G$中存在非正规的内交换子群$H$满足$|G:H^G|>2$.
+\end{theorem}
+
+\begin{Proof}
+同定理~\ref{theorem3.1}的讨论可知,
+$s+u> r+1$, 即$r<s+u-1$.
+
+设$H=\langle a^{2^{s+u-1}}, b\rangle$, 由$[a^{2^{s+u-1}}, b]=a^{2^{r+s+u-1}}$可知$H$内交换.
+由于$r<s+u-1$,
+故$G'\nleq H$. 由于$[a,b]=a^{2^r}\not\in H$, 故$H
+\ntrianglelefteq  G$.
+
+由于$a^{2^r}=[a,b]\in H^G$, 故$G'\leq H^G$.
+由正规闭包定义可知, $H^G=HG'=\langle a^{2^r}, b\rangle$.
+因而$|H^G|=2^{r+2s+t+u}.$ 由于$r\geq2$, 故$|G:H^G|=2^r>2$.
+\end{Proof}
+
+
+\begin{theorem}\label{theorem3.4}
+设$G$是例外亚循环群,
+则$G$
+的所有非正规的内交换子群$H$满足$|G:H^{G}|=2$
+当且仅当$G$满足$r+s+v+t'+u \geq 4$且$s+t'+u \leq 3$.
+\end{theorem}
+
+\begin{Proof}
+如果 $r=2,\ s+v+t'+u=0$, 则$G$ 内交换,
+如果$r=3,\ s=v=t'=u=0$ 或 $r=2,\ s+v+t'+u=1$, 由引理~\ref{lemma3.1}, $G$
+是有限亚 Hamilton 群, 从而$G$的所有内交换子群正规 .
+故下面假定$r+s+v+t'+u \geq4$.
+
+必要性.\quad 假设$s+t'+u > 3$.
+
+设$H=\langle  a^{4} , b^{2}a \rangle$.
+由于$s+t'+u > 3$, 故$$[a^{4} ,b^{2}a ]=[a^{4} ,b^{2} ]=a^{2^{r+v+3}(-1+2^{r+v-1})}\neq 1,$$
+于是$H$非交换.
+由于$$H<\cdot\langle  a^{2} , b^{2}a \rangle<\cdot \langle  a , b^{2} \rangle <\cdot G, \langle  a^{2} , b^{2}a \rangle\trianglelefteq G\
+\mbox{且}\ |G:\langle  a^{2} , b^{2}a \rangle|=4,$$
+由题设可知, $H\trianglelefteq G$.
+因此$[b, b^{2}a]=a^{2-2^{r+v}}\in H$,
+于是$a^{2} \in H $, 矛盾. 所以$s+t'+u\leq 3$.
+
+充分性.\quad 设$s+t'+u\leq 3$.
+任取$G$的非正规非交换子群$H$, 同定理~\ref{theorem2.2}的证明, 可设
+$H=\langle b^{i} a^{j} , a^{l} \rangle$.
+ 因为$H \ntrianglelefteq  G$, 故$a^{2} \notin  H$, 从而$4\,|\,l$.
+ 由$s+t'+u\leq 3\ \mbox{及}\ [a^{l}, b^{i}a^{j} ]^{l}=a^{((-1+2^{r+v})^i+1)l}$
+可知$2\nmid i$.
+于是由$[a, b^ia^i]\in H^G$可得, 故$G'=\langle a^{2}\rangle\leq H^{G}$, 所以
+ $$H^{G}=HG'=\langle a^{2}, b^{i} a^{j}\rangle.$$ 因此, $H^G$是$G$的极大子群.
+ \end{Proof}
+
+
+
+由定理~\ref{theorem3.2}--\ref{theorem3.4}即得
+
+
+\begin{theorem}\label{theorem3.5}
+设$G$是亚循环$p$群. 则$G$的
+所有非正规内交换子群的正规闭包是极大子群当且仅当$G$为下列群之一:
+
+$(1)$ 满足$r=1$且$s+u=3$的奇数阶亚循环$p$群;
+
+$(2)$ $2^n$阶极大类$2$群, 其中$n\geq 5$;
+
+$(3)$ 满足$r+s+v+t'+u \geq 4$且$s+t'+u \leq 3$的例外亚循环$2$群.
+\end{theorem}
+
+
+\Thanks{\authorthanks} % 致谢, 若无可注释
+
+\BeginRef
+
+\REF{[1]} An, L.J., A Complete Classification of Finite Metahamiltonian $p$-Groups [D], Beijing: Beijing University, 2009 (in Chinese).
+
+\REF{[2]} Berkovich, Y., Groups of Prime Power Order I, Berlin: Walter de
+Gruyter, 2008.
+
+\bibitem{[3]} Berkovich, Y. and Janko, Z., Groups of Prime Power Order II, Berlin:
+Walter de Gruyter, 2008.
+
+\bibitem{[4]} Berkovich, Y. and Janko, Z., Groups of Prime Power Order IV, Berlin:
+Walter de Gruyter, 2015.
+
+\bibitem{[5]}  Newman, M.F., Determination of groups of prime-power order,  Group
+Theory (Caberra, 1975), Lecture Notes in Math., Vol. 573, 1977, 73-84.
+
+\bibitem{[6]} Newman, M.F. and Xu, M.Y.,  Metacyclic groups of prime power order, 1987 (preprint).
+
+\bibitem{[7]} Newman, M.F. and Xu, M.Y.,  Metacyclic groups of prime power order,
+{\it Adv. Math.} ({\it China}), 1988, 17(1): 106-107.
+
+\bibitem{[8]} R\'{e}dei, L., Das ``schiefe Product" in der Gruppentheorie
+mit Anwendung auf die endlichen nichtkommutativen Gruppen mit iauter
+kommutativen echten Untergruppen und die Ordnungszahlen, zu denen
+nur kommutative Gruppen geh\"{o}ren, {\it Comment. Math. Helv.}, 1947, 20:
+225-264 (in German).
+
+%\bibitem{[9]} 徐明曜, 曲海鹏, 有限$p$群,  北京: 北京大学出版社, 2010.
+\bibitem{[9]} Xu, M.Y. and Qu, H.P., Finite $p$-groups,  Beijing: Peking University Press, 2010.
+
+\bibitem{[10]} Xu, M.Y. and Zhang, Q.H., A classification of metacyclic $2$-groups,
+ {\it Algebra Colloq.}, 2006, 13: 25-34.
+
+\EndRef
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ETitle{\entitle} %
+\EAuthor{\enauthor} %
+\EInstitution{\eninstitution}{\eninstitutionadjpos} %
+\EAbstract{\enabstract} %
+\EKeywords{\enkeywords} %
+
+\end{document}

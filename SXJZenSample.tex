@@ -1,0 +1,230 @@
+\documentclass{sxjzarten}          %
+
+\numberwithin{equation}{section} %
+\setcounter{section}{-1} %
+
+%----user-defined----
+%\usepackage{hyperref}
+%----user-defined end----
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%------------------ Information offered by the editorial office ---------------------%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\pubvol}{46} % Vol.
+\newcommand{\pubno}{4} % No.
+\newcommand{\pubyear}{2017} % Year
+\newcommand{\pubmonth}{7} % Month
+\setcounter{page}{583} % Start page
+\newcommand{\receivedate}{2015-08-25} % Received date
+\newcommand{\revisedate}{2015-12-23} % Revised date
+\newcommand{\doino}{10.11845/sxjz.2015156b} % doi
+\newcommand{\paperid}{1000-0917(2017)04-0583-07} % Paper ID
+\newcommand{\documentcode}{A} % Document code
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%-------------------- Information provided by the authors ------------------------%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+\newcommand{\entitle}{Finite Metacyclic ${\bm p}$-groups All of Whose Minimal Non-abelian Subgroups Satisfy Some Properties} % Title
+\newcommand{\enauthor}{WANG Lifang} % Author
+\newcommand{\eninstitution}{School of Mathematics and Computer Science, Shanxi Normal University, Linfen, Shanxi, 041004, P. R. China} % Institution
+\newcommand{\eninstitutionadjpos}{0.7cm} % used for adding \hspce{\eninstitutionadjpos} before \eninstitutionto adajust the position, default is 0cm
+\newcommand{\enabstract}{We classify finite metacyclic $p$-groups all of whose minimal non-abelian subgroups have the same order, and finite metacyclic $p$-groups all of whose normal closures of non-normal minimal non-abelian subgroups are maximal. This solves two problems proposed by Berkovich.} % Abstract
+\newcommand{\enkeywords}{metacyclic $p$-group; minimal non-abelian subgroup; normal closure of a non-normal subgroup} % Keywords
+%%
+\newcommand{\cntitle}{内交换子群满足某些条件的亚循环$p$群} % Title in Chinese
+\newcommand{\cnauthor}{王丽芳} % Author's names in Chinese
+\newcommand{\cninstitution}{山西师范大学数学与计算机科学学院, 临汾, 山西, 041004} % Institutions in Chinese
+\newcommand{\cninstitutionadjpos}{3.2cm} % used for adding \hspce{\cninstitutionadjpos} before \cninstitutionto adajust the position, default is 0cm
+\newcommand{\cnabstract}{本文决定了非正规内交换子群均同阶的亚循环$2$群以及非正规内交换子群的正规闭包是极大子群的亚循环$p$群.  从而解决了Berkovich提出的两个问题.} % Abstract in Chinese
+\newcommand{\cnkeywords}{亚循环$p$群; 内交换子群; 非正规子群的正规闭包} % Keywords in Chinese
+\newcommand{\MR}{20D15} % MR(2010) Subject Classification
+\newcommand{\CL}{O152.1} % CLC numbers
+\newcommand{\titlemark}{王丽芳:~Finite Metacyclic ${\bm p}$-groups}  % Header, 如有多位作者,请写为 第一作者姓名等  1st author~et al.
+\newcommand{\fundinfo}{The work is supported by NSFC
+(No. 11271316) and the Youth Fund of Shanxi University of Finance and Economics (No. Z06045).} % Foundation item
+\newcommand{\authorinfo}{lfwang@163.com} % E-mail
+\newcommand{\authorthanks}{The authors  thank the referees for their valuable comments and suggestions.} % Acknowledgements
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%
+\EditorNote{Received date:~\receivedate.~Revised date:~\revisedate.}  %
+\EditorNote{Foundation item:~\fundinfo} %
+\EditorNote{E-mail:~\authorinfo} %
+\BeginTitle %
+\ETitle{\entitle}  %
+\EAuthor{\enauthor} %
+\EInstitution{\eninstitution}{\eninstitutionadjpos} %
+\EAbstract{\enabstract} %
+\EKeywords{\enkeywords} %
+\EMRCLClass{\MR}{\CL} %
+\EndTitle
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Mainbody
+\Section{Introduction}
+In this paper, we are concerned with the approximate controllability for a fractional differential equation with nonlocal initial conditions of the form
+\begin{equation}\label{e1.1}
+\left\{\begin{aligned}
+&D^\alpha x(t) = Ax(t)+J_t^{1-\alpha}[f(t,x(t))+Bu(t)] ,\quad 0< t\leq b,\\
+&x(0)=x_0-g(x),
+\end{aligned}
+\right.\tag{0.1}
+\end{equation}
+\noindent where $D^\alpha$ is the Caputo fractional derivative of order $\alpha$ with $0<\alpha< 1$, \,$A:D(A)\subset X\rightarrow X$ is the infinitesimal
+generator of a resolvent $S_\alpha(t), t\geq 0$, $B:U\rightarrow X$ is a bounded linear operator, $u\in L^2([0,b],U)$, $X$
+and $U$ are two real Hilbert spaces, $J_t^{1-\alpha}h$ denotes the $1-\alpha$ order fractional integral of $h\in L^1([0,b],X)$,
+and $f,g$ are appropriate continuous functions to be specified later.
+
+The controllable problem has attracted a lot of  mathematicians and engineers, since it plays a key role in control theory and engineering and has very important applications in these fields. Many contributions on exact and approximate controllability have been made in recent years. We refer the reader to the recent papers~\cite{[1],[2],[3]} and references therein. Many authors discuss the approximate controllability when the linear closed operator generates a classical semigroup. However, there are few articles to study the fractional control system~\eqref{e1.1} governed by a linear operator which generates a resolvent. The main difficulty is that the resolvent does not have the property of semigroups, even the continuity in the uniform operator topology. Fortunately, we have proven the continuity of the resolvent in the uniform operator topology and given the characterization of compactness for resolvents in the case of an analytic resolvent. For more details, we refer the readers to the recent paper~\cite{[4]} by Fan.
+
+In Section~\ref{sec2}, we obtain the existence results for  the nonlocal fractional control system.
+
+\Section{Preliminaries}
+
+\begin{definition}[\supercite{[2]}]\label{def1}
+The fractional order integral of the
+function $f\in L^1([0,b],X)$ of order $\alpha>0$ is defined by
+$$J_t^{\alpha}f(t)=\frac{1}{\Gamma(\alpha)}\int_0^t(t-s)^{\alpha-1}f(s)\mathrm{d}s,$$
+where $\Gamma$ is the Gamma function.
+\end{definition}
+
+
+\begin{lemma}[{(\cite[Theorem~2]{[5]})}]\label{lemma1}
+Suppose that $u$ is the optimal control of (1.3). Then
+$$u(t)=B^*S_\alpha^*(b-t)R(\lambda,\Lambda_b)p(x(\,\cdot\,)), \quad t\in [0,b]$$
+with
+$$p(x(\,\cdot\,))=x_b-S_\alpha(b)[x_0-g(x)]-\int_0^bS_\alpha(b-s)f(s,x(s))\mathrm{d}s.$$
+\end{lemma}
+
+\begin{Proof}
+The proof is similar to that of \cite[Lemma 2.9]{[4]}, so we omit it.
+\end{Proof}
+
+According to Lemma~\ref{lemma1}, for every $\lambda>0$ and $x_b\in X$, we construct the following integral system:
+\begin{equation}\label{e2.9}
+\left\{\begin{aligned}
+&x(t)=S_\alpha(t)[x_0-g(x)]+\int_0^tS_\alpha(t-s)[f(s,x(s))+Bu(s)]\mathrm{d}s,\quad 0\leq t\leq b,\\
+&u(t)=B^*S_\alpha^*(b-t)R(\lambda,\Lambda_b)p(x(\,\cdot\,)),\\
+&p(x(\,\cdot\,))=x_b-S_\alpha(b)[x_0-g(x)]-\int_0^bS_\alpha(b-s)f(s,x(s))\mathrm{d}s.
+\end{aligned}
+\right.\tag{1.4}
+\end{equation}
+
+\Section{Existence Results} \label{sec2}
+
+\begin{remark}
+It is easy to see that the condition (H3) is weaker than the
+compactness and convexity of $g$. The same hypothesis can be seen
+from [4, 6, 29], where the authors considered the existence of
+mild solutions for semilinear nonlocal problems of integer order when $A$ generates a
+$C_0$-semigroup. After the proof of our main results, we give some special types of nonlocal
+item $g$ which is neither Lipschitz nor compact, but satisfies the
+condition (H3) in the next corollaries.
+\end{remark}
+
+Now, we can prove the first main result in this paper. We hereafter always suppose that $\|R(\lambda, \Lambda_b)\|\leq \frac{1}{\lambda}$ for all $\lambda>0$.
+
+\begin{theorem}\label{theorem1}
+Assume that the conditions (H1)--(H4) are satisfied. Then the integral system
+(1.4) has at least one mild solution on $[0,b]$
+for every $\lambda>0$ and $x_b\in X$.
+\end{theorem}
+
+\begin{corollary}
+Assume that the conditions (H1), (H2), (H3$'$) and (H4) are satisfied,
+then the integral system (1.4) has at least one mild solution
+on $[0,b]$.
+\end{corollary}
+
+\Section{Approximate Controllability}
+
+\begin{table}[!htb]\label{tab}
+\centering
+\caption{XXX}
+\vspace{2mm}
+\begin{tabular}{|c|c|c|l|c|}
+\hline $P(x)$ & $i$& $(e(1),e(2),e(4))$ & $(e(3),e(6),e(12),e(24))$ & $T(E)$ \\
+\hline $P_1$  &    & & &$\emptyset$ \\
+\hline $P_2$  & 4  & & $(1,1,1,0)\rightarrow(0,0,0,1)$ &2\\
+\hline $P_3$  & 2  & &$(1,1,1,0)\rightarrow(0,0,2,0)$ &1\\
+\hline $P_4$  & 2  & $(0,1,1)\rightarrow(1,2,0)$ & &1\\
+\hline $P_5$  & 2  & $(0,1,1)\rightarrow(1,2,0)$ &$(1,1,1,0)\rightarrow(0,0,0,1)$ &1,2\\
+\hline
+\end{tabular}
+\end{table}
+
+% 图示例
+%\begin{figure}[h]
+%\centering\includegraphics[scale=1.2]{figure.eps}
+%\caption{标题}
+%\end{figure}
+%其中[scale=1.2]的参数可以调节大小
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=10cm,height=3cm]{figs/sin}
+\caption{Figure 1\label{fig:fig4}}
+\end{figure}
+
+\begin{figure}[htbp]
+\begin{minipage}[t]{0.45\linewidth}
+\centering
+\includegraphics[width=6cm,height=3cm]{figs/sin}
+\caption{Sub-figure 1\label{fig:float2-1}}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.5\linewidth}
+\centering
+\includegraphics[width=5cm,height=3cm]{figs/fig}
+\caption{Sub-figure 2\label{fig:float2-2}}
+\end{minipage}
+\end{figure}
+
+\begin{figure}
+  \subfigure[Small Box with a Long Caption]{
+    \label{fig:mini:subfig:a} %% label for first subfigure
+    \begin{minipage}[b]{0.4\textwidth}
+      \centering
+      \includegraphics[width=1in]{figs/sin}
+    \end{minipage}}%
+  \subfigure[Big Box]{
+    \label{fig:mini:subfig:b} %% label for second subfigure
+    \begin{minipage}[b]{0.4\textwidth}
+      \centering
+      \includegraphics[width=1in]{figs/fig}
+    \end{minipage}}
+  \caption{Minipages Inside Subfigures}
+  \label{fig:mini:subfig} %% label for entire figure
+\end{figure}
+
+
+
+\Thanks{\authorthanks} % 致谢, 若无可注释
+
+\BeginRef
+
+\bibitem{[1]} Aizicovici, S. and  Staicu,  V.,  Multivalued evolution equations with nonlocal initial conditions in Banach spaces,
+{\it NoDEA Nonlinear Differential Equations Appl.}, 2007, 14(3): 361-376.
+
+\bibitem{[2]} Balachandran, K., Park, J.Y. and  Trujillo, J.J.,  Controllability of nonlinear fractional dynamical systems, {\it Nonlinear Anal.}, 2012, 75(4): 1919-1926.
+
+\bibitem{[3]} Byszewski, L. and  Lakshmikantham, V.,  Theorem about the existence and uniqueness of solutions of a nonlocal Cauchy problem in a Banach space, {\it Appl.\ Anal.}, 1990, 40(1): 11-19.
+
+\bibitem{[4]} Chen, L.Z. and Fan, Z.B.,  On mild solutions to fractional differential equations with nonlocal conditions, {\it Electron.\ J.\ Qual.\ Theory Differ.\ Equ.}, 2011, 2011(53): 1-13.
+
+\bibitem{[5]} Chen, L.Z., Fan, Z.B. and Li, G., On a nonlocal problem for fractional differential equations via resolvent operators,  {\it Adv.\ Difference Equ.},  2014, 2014: Article ID 251, 12 pages.
+
+\EndRef
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\CTitle{\cntitle} %
+\CAuthor{\cnauthor} %
+\CInstitution{\cninstitution}{\cninstitutionadjpos} %
+\CAbstract{\cnabstract} %
+\CKeywords{\cnkeywords} %
+
+\end{document}
