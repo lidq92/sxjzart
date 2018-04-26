@@ -32,3 +32,13 @@
 \label{} % 标记
 \ref{} % 引用
 ```
+
+## 图、表、公式
+```latex
+\begin{figure}
+\end{figure}
+\begin{table}
+\end{table}
+\begin{equation}
+\end{equation}
+```
