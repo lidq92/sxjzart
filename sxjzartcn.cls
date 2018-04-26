@@ -182,7 +182,8 @@ scaled \magstep0 \font\tenbf=cmb10 scaled \magstep0
     {\heiti\bf MR(2010) Subject Classification:}\ \ #1\ / \ {\heiti\bf CLC number:}\ \ #2%
 	\indent{\heiti\bf Document Code:}\ \ \documentcode \qquad {\heiti\zihao{6}\bf Article ID:}\ \ \paperid%
   \endgroup}
-
+  
+\setcounter{section}{-1} % Section从0开始
 \newcommand*\Section[2][]{%
   \edef\ams@temp{#1}
   \ifx\ams@temp\@empty\addtocounter{section}{1}
@@ -247,7 +248,8 @@ scaled \magstep0 \font\tenbf=cmb10 scaled \magstep0
 \let\thmhead\thmhead@plain
 \makeatother
 
-
+%%%%% 公示编号随节变化
+\numberwithin{equation}{section} %
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%Reference
 \newcommand*\Thanks[1]{%

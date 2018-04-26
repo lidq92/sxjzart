@@ -172,6 +172,7 @@ scaled \magstep0 \font\tenbf=cmb10 scaled \magstep0
 	\indent{\heiti\bf 文章标识码:}\ \ \documentcode \qquad {\heiti\zihao{-5}\bf 文章编号:}\ \ \paperid%
   \par\endgroup}
 
+\setcounter{section}{-1} % Section从0开始
 \newcommand*\Section[2][]{%
   \edef\ams@temp{#1}
   \ifx\ams@temp\@empty\addtocounter{section}{1}
@@ -225,6 +226,9 @@ scaled \magstep0 \font\tenbf=cmb10 scaled \magstep0
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \renewcommand{\figurename}{Figure}
 \renewcommand{\tablename}{Table}
+
+%%%%% 公示编号随节变化
+\numberwithin{equation}{section} %
 
 \newcommand*\Thanks[1]{%
   \vskip8pt{\heiti\bf\relax Acknowledgement}\quad #1\par}
