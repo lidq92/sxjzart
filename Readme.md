@@ -44,6 +44,6 @@
 ```
 
 # Progress in Mathematics - Latex template
-新刊英文模板，基于 `article.cls`，根据需求修改了一下排版的格式
+新刊英文模板`PiMart.cls`，基于 `article.cls`，根据需求修改了一下排版的格式
 
 与旧期刊模板不同，该模板用法和常规的类似
