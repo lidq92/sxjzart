@@ -141,20 +141,20 @@ scaled \magstep0 \font\tenbf=cmb10 scaled \magstep0
 \newcommand*\CAuthor[1]{%
 \begin{center}\large\zihao{4}\fangsong#1\end{center}\vskip.02in
 }
-\newcommand*\CInstitution[2]{%
-\baselineskip 12pt\small\zihao{-5}\fangsong\hspace{#2}#1
+\newcommand*\CInstitution[1]{%
+\baselineskip 12pt\small\zihao{-5}\fangsong\begin{center}(#1)\end{center}
 }
 \newcommand*\CAbstract[1]{%
   \begingroup\vskip.2in\narrower\zihao{-5}\small
-    {\heiti\bf 摘要:}\fangsong\ \  #1%
+    \indent\indent{\heiti\bf 摘要:}\fangsong\ \  #1%
   \par \endgroup}
 \newcommand*\CKeywords[2][关键词]{%
   \begingroup\narrower\zihao{-5}\small
-    {\heiti\bf #1:}\fangsong\ \ #2%
+    \indent\indent{\heiti\bf #1:}\fangsong\ \ #2%
   \par\endgroup}
 \newcommand*\CMRCLClass[2]{%
   \begingroup\narrower\zihao{-5}\small
-    {\heiti\bf MR(2010)主题分类:}\ \ #1 / {\heiti\bf 中图分类号:}\ \ #2\\%
+    \indent\indent{\heiti\bf MR(2010)主题分类:}\ \ #1 / {\heiti\bf 中图分类号:}\ \ #2\\%
 	\indent{\heiti\bf 文章标识码:}\ \ \documentcode \qquad {\heiti\zihao{-5}\bf 文章编号:}\ \ \paperid%
   \par\endgroup}
 \newcommand*\EndTitle{\normalsize\songti \baselineskip 13pt \vskip.2in}
@@ -166,8 +166,8 @@ scaled \magstep0 \font\tenbf=cmb10 scaled \magstep0
 \newcommand*\EAuthor[1]{%
 \begin{center}\normalsize\zihao{5} #1\end{center}
 }
-\newcommand*\EInstitution[2]{%
-\baselineskip 12pt\hspace{#2}{\small{\it #1}}\vskip.15in
+\newcommand*\EInstitution[1]{%
+\baselineskip 12pt\begin{center}{\small{(\it #1})}\end{center}\vskip.15in
 }
 \newcommand*\EAbstract[1]{%
   \begingroup\narrower\zihao{5}\normalsize
