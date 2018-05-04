@@ -142,7 +142,7 @@ scaled \magstep0 \font\tenbf=cmb10 scaled \magstep0
 \begin{center}\large\zihao{4}\fangsong#1\end{center}\vskip.02in
 }
 \newcommand*\CInstitution[2]{%
-\baselineskip 12pt\small\zihao{-5}\fangsong\hspace{#2}(#1)
+\baselineskip 12pt\small\zihao{-5}\fangsong\hspace{#2}#1
 }
 \newcommand*\CAbstract[1]{%
   \begingroup\vskip.2in\narrower\zihao{-5}\small
@@ -167,7 +167,7 @@ scaled \magstep0 \font\tenbf=cmb10 scaled \magstep0
 \begin{center}\normalsize\zihao{5} #1\end{center}
 }
 \newcommand*\EInstitution[2]{%
-\baselineskip 12pt\begin{center}\hspace{#2}{\small({\it #1})}\end{center}\vskip.15in
+\baselineskip 12pt\hspace{#2}{\small{\it #1}}\vskip.15in
 }
 \newcommand*\EAbstract[1]{%
   \begingroup\narrower\zihao{5}\normalsize
