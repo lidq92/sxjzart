@@ -1,0 +1,98 @@
+%本刊的标点符号均使用英文标点,您可以在编译前设置标点形式
+\documentclass{sxjzartcn}          % 调用sxjzartcn.cls
+%----作者自定义开始----
+
+%----作者自定义结束----
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%------------------ 编辑部提供的信息 ------------------------%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\pubvol}{47} % 卷号
+\newcommand{\pubno}{2} % 期号
+\newcommand{\pubyear}{2018} % 出版年份
+\newcommand{\pubmonth}{3} % 出版月份
+\setcounter{page}{1} % 起始页码
+\newcommand{\receivedate}{2016-07-28} % 论文收到日期
+\newcommand{\revisedate}{2017-08-31} % 论文修改日期
+\newcommand{\doino}{\ 10.11845/sxjz.2016098b} % doi号
+\newcommand{\paperid}{1000-0917(2018)} % 文章编号
+\newcommand{\documentcode}{A} % 文献标识码
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%-------------------- 作者提供的信息 ------------------------%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+\newcommand{\cntitle}{题目} % 题目
+
+\newcommand{\cnauthor}{作者} % 作者
+
+\newcommand{\cninstitution}{单位} % 研究机构
+\newcommand{\cnabstract}{摘要内容.} % 摘要
+\newcommand{\cnkeywords}{关键词; 关键词} % 关键词
+\newcommand{\MR}{} % MR(2010)主题分类
+\newcommand{\CL}{} % 中图分类号
+\newcommand{\titlemark}{}  % 页眉用, 如有多位作者,请写为 第一作者姓名等
+\newcommand{\fundinfo}{} % 首页脚注: 如 基金项目:国家自然科学基金资助项目(No.\ 61421062). 若无, 则删除 \EditorNote{基金项目:~\fundinfo} 命令
+\newcommand{\authorinfo}{作者邮箱} % 首页脚注: 作者邮箱
+\newcommand{\authorthanks}{致谢内容.} % 致谢, 若无, 则删除文档中的 \Thanks{\authorthanks} 命令
+%%
+\newcommand{\entitle}{Title} % Title
+\newcommand{\enauthor}{Author} % Author
+\newcommand{\eninstitution}{Institution} % Institution
+\newcommand{\enabstract}{Content of Abstract} % Abstract
+\newcommand{\enkeywords}{keyword; keyword} % Keywords
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%
+\EditorNote{收稿日期: \,\receivedate. \ 修改稿收到日期: \,\revisedate.}  % 首页脚注: 论文收稿修改以及接收时间
+\EditorNote{基金项目: \fundinfo} % 首页脚注: 基金项目, 若无可注释
+\EditorNote{E-mail:~\authorinfo} % 首页脚注: 作者邮箱
+\BeginTitle % 首页页眉
+\CTitle{\cntitle}  % 题目
+\CAuthor{\cnauthor} % 作者
+\CInstitution{\cninstitution} % 机构, 第二个参数用于调整位置
+\CAbstract{\cnabstract} % 摘要
+\CKeywords{\cnkeywords} % 关键词
+\CMRCLClass{\MR}{\CL} % MR(2010) 主题分类、中图分类号、文献标志码、文章编号
+\EndTitle
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%% 正文 %%%%%%%%%%%%%%%%%%%%%%%%%%%
+\baselineskip 15.5pt
+\Section {引言}
+
+\Section{定理环境}
+
+\Section{公式}
+
+\Section{图表}
+
+
+\Subsection{图}
+
+\Subsection{表}
+
+\Thanks{\authorthanks}
+
+\vspace{-0.2cm}
+\BeginRef
+
+\bibitem{Yang2018} Yang, F., Li, D. and Niu, K., Title, Journal, 2018, xx(x): xxx-xxx.
+
+
+\EndRef
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ETitle{\entitle} %
+\vskip -.1in
+\EAuthor{\enauthor} %
+
+\EInstitution{\eninstitution}
+\vskip -.1in
+\EAbstract{\enabstract} %
+
+\EKeywords{\enkeywords} %
+
+\end{document}

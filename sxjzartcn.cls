@@ -29,6 +29,7 @@
 \RequirePackage{ifpdf}
 \RequirePackage{graphicx,subfigure,picins,psfrag,epstopdf}
 \graphicspath{{./figs/}} % {{dir1},{dir2},{dir3}} % 图片路径
+\usepackage{multirow}
 \RequirePackage{amsmath,amsthm,makeidx,amssymb,amsfonts,amscd,mathrsfs,bm,headrule}
 \RequirePackage[numbers,sort&compress]{natbib}\setlength{\bibsep}{0.5ex} % 缩小参考文献之间的垂直间距
 \RequirePackage{xcolor} % Color for logo
@@ -167,21 +168,17 @@ scaled \magstep0 \font\tenbf=cmb10 scaled \magstep0
 \begin{center}\normalsize\zihao{5} #1\end{center}
 }
 \newcommand*\EInstitution[1]{%
-\baselineskip 12pt\begin{center}{\small{(\it #1})}\end{center}\vskip.15in
-}
+  \begingroup\small
+   \indent{(\it #1)}\vskip.15in
+  \par\endgroup}
 \newcommand*\EAbstract[1]{%
-  \begingroup\narrower\zihao{5}\normalsize
-   \indent{\heiti\bf\ \quad Abstract:}\rm\ \ #1%
+  \begingroup\zihao{5}\normalsize
+   \indent{\heiti\bf Abstract:}\rm\ \  #1%
   \par\endgroup}
 \newcommand*\EKeywords[2][Keywords]{%
-  \begingroup\narrower\zihao{5}\normalsize
-    \indent{\heiti\bf\ \quad #1:}\rm\ \ #2%
+  \begingroup\zihao{5}\normalsize
+    \indent{\heiti\bf #1:}\rm\ \ #2%
   \par\endgroup}
-\newcommand*\EMRCLClass[2]{%
-  \begingroup\narrower\zihao{-5}
-    {\heiti\bf MR(2010) Subject Classification:}\ \ #1\ / \ {\heiti\bf CLC number:}\ \ #2%
-	\indent{\heiti\bf Document Code:}\ \ \documentcode \qquad {\heiti\zihao{6}\bf Article ID:}\ \ \paperid%
-  \endgroup}
   
 \setcounter{section}{-1} % Section从0开始
 \newcommand*\Section[2][]{%
@@ -229,15 +226,6 @@ scaled \magstep0 \font\tenbf=cmb10 scaled \magstep0
 \newtheorem{assumpation}{假设\relax}[section]
 \newtheorem{notation}{记号\relax}[section]
 
-%\newtheorem{lemma}[theorem]{引理\relax}
-%\newtheorem{property}[theorem]{性质\relax}
-%\newtheorem{proposition}[theorem]{命题\relax}
-%\newtheorem{question}[theorem]{问题\relax}
-%\newtheorem{corollary}[theorem]{推论\relax}
-%\newtheorem{definition}[theorem]{定义\relax}
-%\newtheorem{remark}[theorem]{注\relax}
-%\newtheorem{example}[theorem]{例\relax}
-
 \newenvironment{Proof}[1][Proof]{\heiti\bf 证明\!\quad\rm}
 {\hfill $\Box$}
 %%%%% 去除定理中可选Title的括号
@@ -253,10 +241,10 @@ scaled \magstep0 \font\tenbf=cmb10 scaled \magstep0
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%Reference
 \newcommand*\Thanks[1]{%
-  \vskip8pt{\heiti\bf\relax 致谢}\quad #1\par}
+  \vskip 8pt{\heiti\bf\relax 致谢}\quad #1\par}
 \renewcommand\refname{\leftline{\large\bf\heiti\zihao{-4}参考文献}}
-\newcommand\BeginRef{ \baselineskip 11pt \footnotesize \parindent=4.75mm
-\begin{thebibliography}{999}}
+\newcommand\BeginRef{ \baselineskip 13pt \footnotesize \parindent=4.75mm
+\begin{thebibliography}{99}}
 \newcommand\EndRef{\end{thebibliography}} 
 \newcommand*\REF[1]{\bibitem{#1}} 
 
@@ -268,7 +256,6 @@ scaled \magstep0 \font\tenbf=cmb10 scaled \magstep0
   \@ifnextchar\bgroup
     {\supercite@double{#1}}{\supercite@{#1}}}
 \makeatother
-%\newcommand*\supercite[1]{\textsuperscript{\cite{#1}}}
 \newcommand*\ucite[1]{\textsuperscript{\cite{#1}}}
 
 \endinput
