@@ -1,18 +1,17 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Coal Geology & Exploration class 21-11-2017
+% Advances in Mathematics 29-05-2018
 % For any information please send an e-mail to:
 % xiu.li@mdpi.com
 % Class modified by:
 % Xiu Li
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
 % IDENTIFICATION
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{BD-Math}[2017/11/21 BD-Math class]
+\ProvidesClass{BD-Math}[2018/05/29 BD-Math class]
 
 % PRELIMINARY DECLARATIONS--twoside,
-\LoadClass[10.5pt,twoside,a4paper]{article}
+\LoadClass[10.5pt,twoside]{article}
 
 % OPTIONS
 \ProcessOptions\relax
@@ -48,6 +47,10 @@
 \newcounter{remark}
  \setcounter{remark}{0}
  \newtheorem{remark}[definition]{Remark}
+ 
+ \newcounter{case}
+ \setcounter{case}{0}
+ \newtheorem{case}[definition]{Case}
 
 \newcounter{example}
  \setcounter{example}{0}
@@ -56,6 +59,10 @@
 \newcounter{proposition}
  \setcounter{proposition}{0}
  \newtheorem{proposition}[definition]{Proposition}
+
+\newcounter{conjecture}
+ \setcounter{conjecture}{0}
+ \newtheorem{conjecture}[definition]{Conjecture}
 
 \renewcommand{\qed}{\unskip\nobreak\hfill\qedsymbol} %% This places the symbol right after the text instead of placing it at the end on the line.
 
@@ -74,30 +81,28 @@
 
 % MORE DECLARATIONS
 % Packages
-%\RequirePackage[T1]{fontenc}
-%\RequirePackage[utf8]{inputenc}
 \RequirePackage{fontspec} % Allows you to use different fonts that are installed on your computer
 \RequirePackage{graphicx} % Figures
 \RequirePackage{titlesec}  % Styles and formatting of section headers
 \RequirePackage{fancyhdr} % Headers and footers
 \RequirePackage{ragged2e} % Text alignment (flushleft/flushright)
 \RequirePackage[left=2.6cm, 
-	right=3.3cm, 
-	top=3.7cm, 
-	bottom=4.8cm, 
-	headsep=0.2cm, % Distance between header and text
-	head=1.6cm]{geometry} % Page size and margins%, 	showframe
-%\RequirePackage{caption} % Figure and table captions
-%\RequirePackage{multicol} % References as two columns
+	right=4.4cm, 
+	top=1.9cm, 
+	bottom=4.75cm, 
+	headsep=0.5mm, % Distance between header and text
+	head=1.6cm,
+	paperwidth=8.5in,
+	paperheight=11in]{geometry} % Page size and margins%, 	showframe
 \RequirePackage{xcolor} % Color for logo
 \RequirePackage{soul} % For highlighting text
 \RequirePackage{multirow} % For typesetting the text in two columns
 \RequirePackage{booktabs} % For tables
 \definecolor{bluecite}{HTML}{0875b7}
 \RequirePackage[colorlinks,
-	linkcolor=bluecite,
-	citecolor=bluecite,
-	urlcolor=bluecite,
+	linkcolor=black,
+	citecolor=black,
+	urlcolor=black,
 	pdfborder={0 0 0},
 	unicode=true]{hyperref}
 \RequirePackage[sort&compress]{natbib} % Citations sort
@@ -109,17 +114,20 @@
 \RequirePackage{bm}
 \RequirePackage{mathrsfs}
 \RequirePackage{amsmath}
+\RequirePackage{caption} % Figure and table captions
+\RequirePackage[T1]{fontenc}
 
-
-
-%\RequirePackage{float}
+% Figure and table captions
+\captionsetup{
+	margin=0pt,
+	labelsep=space,
+	justification=centering,
+	font=normal}
+		
+\RequirePackage{float}
 \RequirePackage{etoolbox} % For \AtBeginDocument etc.
 \RequirePackage{tabularx} % For option X, to spread out columns to fill pagewidth
-%\RequirePackage{bicaption} % For captions in Chinese and English
 \RequirePackage{ifthen}%For add condition
-%\RequirePackage{textcomp}%For some symbol mark
-%\RequirePackage{upgreek} %For Greek letter
-%\RequirePackage{wrapfig} %For suspend figure
 
 \newboolean{first}%define a Boolean variable to judge first page as false
 \setboolean{first}{true}%set default value as true
@@ -138,25 +146,19 @@
 
 % Define fonts
 \usepackage{xeCJK} % Support for CJK documents in XeLaTeX
-%\RequirePackage{ctex} %For Chinese environment
-%\setmainfont{FZShuSong-Z01S}
-%\setmainfont{Times New Roman}
 \setCJKmainfont{SimSun}
-%\newCJKfontfamily[song]\songti{SimSun}
 \setCJKfamilyfont{song}{SimSun}
 \newcommand*{\songti}{\CJKfamily{song}}
-%\newCJKfontfamily[fsong]\fsong{FangSong}
 \setCJKfamilyfont{fsong}{FangSong}
 \newcommand*{\fsong}{\CJKfamily{fsong}}
-%\newCJKfontfamily[kaiti]\kaiti{KaiTi}
 \setCJKfamilyfont{kaiti}{KaiTi}
 \newcommand*{\kaiti}{\CJKfamily{kaiti}}
-%\newCJKfontfamily[heiti]\heiti{SimHei}
 \setCJKfamilyfont{heiti}{SimHei}
 \newcommand*{\heiti}{\CJKfamily{heiti}}
-
+\usepackage{CJKpunct} % For control Chinese punctuation space
+\punctstyle{banjiao}
 % Section headings
-\titleformat{\section}[block]{\raggedright \fontsize{13}{13}\selectfont\bfseries} {\thesection\quad} {0pt} {}
+\titleformat{\section}[block]{\raggedright \fontsize{13.5}{13.5}\selectfont\bfseries} {\thesection\quad} {0pt} {}
 \titlespacing {\section} {0cm} {0.3cm} {0.2cm}
 
 \titleformat{\subsection}[block]{\raggedright \fontsize{10.5}{10.5}\selectfont\bfseries} {\thesubsection\quad} {0pt} {}
@@ -170,6 +172,7 @@
 \newcommand{\journalname}[1]{\gdef\journalname{#1}}
 \newcommand{\journalvolume}[1]{\gdef\journalvolume{#1}}
 \newcommand{\journalnumber}[1]{\gdef\journalnumber{#1}}
+\newcommand{\journalmonth}[1]{\gdef\journalmonth{#1}}
 \newcommand{\articledate}[1]{\gdef\articledate{#1}}
 
 % Define header line for first and other page
@@ -187,21 +190,21 @@
 % Headers and footers on first page
 \fancypagestyle{mypagestyle}{
 \setboolean{first}{false}%set first page as false
-\vspace{-12pt}
+\vspace*{1mm}
 \addtolength{\footskip}{-0.7cm}	
 	\fancyhead[L]{
 		\leftskip0.0cm
-		\small \fontsize{10.5}{10.5}\selectfont \songti 第 \journalvolume 卷 \ 第 \journalnumber 期\vspace{3.5pt}\\
-		\pubyear 年 \journalnumber 月}
+		\small \fontsize{9}{9}\selectfont  第 \journalvolume 卷第 \journalnumber 期\vspace{1pt}\\
+		 \pubyear 年 \journalmonth 月}
 		\vspace{3pt} 
 	\fancyhead[C]{
 		\small \fontsize{12}{12}\selectfont \ 数\qquad 学\qquad 进\qquad 展 \vspace{1pt}\\
-		\fontsize{10.5}{10.5}\selectfont ADVANCES IN MATHEMATICS (CHINA)}
+		\fontsize{9.5}{9.5}\selectfont ADVANCES IN MATHEMATICS (CHINA)}
 		\vspace{3pt}
 	\fancyhead[R]{
 		\rightskip0.0cm
-		\small \fontsize{10.5}{10.5}\selectfont Vol. \journalvolume,\ No. \journalnumber\vspace{3.5pt}\\
-		\fontsize{10.5}{10.5}\selectfont\articledate, \pubyear}
+		\small \fontsize{9}{9}\selectfont  Vol. \journalvolume,\ No. \journalnumber\vspace{1pt}\\
+		\fontsize{9}{9}\selectfont\articledate, \pubyear}
 		\vspace{3pt}
 }
 
@@ -244,12 +247,12 @@
 
 % Headers and footers on all  pages except first
 \pagestyle{fancy}
-\fancyhead[OL]{\leftskip0.25cm \fontsize{9}{9}\selectfont No.\ \journalnumber \vspace{1.5pt}}
+\fancyhead[OL]{\fontsize{9}{9}\selectfont No.\ \journalnumber \vspace{1.5pt}}
 \fancyhead[OC]{\fontsize{9}{9}\selectfont \@EnglishAuthorNames: \@EnglishTitle \vspace{1.5pt}}
-\fancyhead[OR]{\rightskip0.25cm \fontsize{9}{9}\selectfont\thepage{}\vspace{1.5pt}}
-\fancyhead[EL]{\leftskip0.25cm\fontsize{9}{9}\selectfont \thepage{}\vspace{1.5pt}}
+\fancyhead[OR]{\fontsize{9}{9}\selectfont\thepage{}\vspace{1.5pt}}
+\fancyhead[EL]{\fontsize{9}{9}\selectfont \thepage{}\vspace{1.5pt}}
 \fancyhead[EC]{\fontsize{9}{9}\selectfont ADVANCES IN MATHEMATICS (CHINA) \vspace{1.5pt}}
-\fancyhead[ER]{\rightskip0.25cm \fontsize{9}{9}\selectfont Vol. \journalvolume \vspace{1.5pt}}
+\fancyhead[ER]{\fontsize{9}{9}\selectfont Vol. \journalvolume \vspace{1.5pt}}
 \fancyfoot{} 
 
 % First page
@@ -262,55 +265,55 @@
       \fontsize{9}{9}\selectfont doi:\  \ \@DOI	\\
 	\end{flushright}
 	\begin{flushleft}
-	\vspace*{-0.1cm}
+	\vspace*{0.15cm}
        \begin{center}
-       \renewcommand{\baselinestretch}{1.25}
-	\fontsize{20}{20}\selectfont{\bf \@EnglishTitle}\footnote{%
-            {Received date:} \@ReceiveDate. \\
+       \renewcommand{\baselinestretch}{1.05}
+	\fontsize{20}{20}\selectfont{\boldmath\bfseries \@EnglishTitle}\footnote{%
+            {Received date:} \@ReceiveDate.\quad {\ifthenelse{\equal{\@ReviseDate}{\@empty}}{}{%
+            {Revised date:} \@ReviseDate.}}\\
 	     {Foundation item:} \@FundItem.\\
 	     {E-mail:} \@CorrsEmail}\\
 		\bigskip
-		\fontsize{13.5}{13.5}\selectfont \@EnglishAuthors\\
+		\fontsize{12}{12}\selectfont \@EnglishAuthors\\
            \end{center}
-              \bigskip
+              \medskip
             \parindent=0.75cm      
             \renewcommand{\baselinestretch}{1.35}
 		\fontsize{9}{9}\selectfont({\@EnglishAffiliations})\\
-              \bigskip
+              \medskip
               \parindent=0.75cm 
-               \leftskip0.75cm
-               \rightskip0.75cm
+               \leftskip0.55cm
+               \rightskip0.55cm
                \renewcommand{\baselinestretch}{1.35} 
 	        \fontsize{9}{9}\selectfont {\bf Abstract:} \@EnglishAbstract\\
               \fontsize{9}{9}\selectfont {\bf  Keywords:} \@EnglishKeywords\\
               \fontsize{9}{9}\selectfont {\bf  MR(2010) Subject Classification:} \@SubjectClass %
               \ / \ {\bf  CLC number:} \@CLCNum\\
               \fontsize{9}{9}\selectfont {\bf  Document code:} \@documentcode \qquad %
-             {\bf  \fontsize{7.5}{7.5}\selectfont Article ID:} \fontsize{9}{9}\selectfont \@pageissn\\       
+             {\bf  \fontsize{9}{9}\selectfont Article ID:} \fontsize{9}{9}\selectfont \@pageissn\\       
 	    \medskip
 	 \end{flushleft}
 	\medskip
 }
 
-\newcommand{\myenglishtitle}{\vspace{-12pt}
+\newcommand{\myenglishtitle}{\vspace*{6pt}
 	\begin{flushleft}
 	\leftskip0cm
 	\rightskip0cm
 	\noindent
             \renewcommand{\baselinestretch}{1.1}
             \begin{center}
-		\noindent\fontsize{14}{14}\selectfont{\heiti \@Title}\\
+		\noindent\fontsize{14}{14}\selectfont{\boldmath\bfseries\heiti \@Title}\\
 		\bigskip	
 		\fontsize{10.5}{10.5}\selectfont\kaiti \@Authors\\
 		\renewcommand{\baselinestretch}{1.3}
               \medskip
-		\fontsize{9.0}{9.0}\selectfont (\songti\@Affiliations\hspace{-0.35em})\\
+		\fontsize{9.0}{9.0}\selectfont (\@Affiliations\hspace{-0.35em})\\
               \end{center}
 	\medskip      
-	\renewcommand{\baselinestretch}{1.35}
-	\fontsize{10.5}{10.5}\selectfont{\hspace{0.75cm}{\heiti 摘要：}\quad }\fsong\@Abstract\\
-	\setlength{\parskip}{0.35\baselineskip}
-	\noindent{\hspace{0.75cm}{\heiti 关键词：}\quad } \fsong\@Keywords\\
+	\renewcommand{\baselinestretch}{1.25}
+	\fontsize{10.0}{10.0}\selectfont{\hspace{0.75cm}{\bfseries\heiti 摘要：}}\fsong\@Abstract\\
+	\noindent{\hspace{0.75cm}{\bfseries\heiti 关键词：}} \fsong\@Keywords\\
 	\smallskip
 	\end{flushleft}
 	\smallskip
@@ -327,6 +330,7 @@
 	\numberwithin{remark}{section}
 	\numberwithin{example}{section}
       \numberwithin{proposition}{section}
+      \numberwithin{case}{section}
 	\setcounter{section}{-1}
 }
 
@@ -337,14 +341,10 @@
 	\vspace{-10pt} 
       \abovedisplayskip=10.0pt plus 2.0pt minus 2.0pt
       \belowdisplayskip=10.0pt plus 2.0pt minus 2.0pt
-      \fontsize{10.5}{10.5}\selectfont
+      \fontsize{10}{10}\selectfont
 }
-%\abovedisplayskip=10.0pt plus 2.0pt minus 2.0pt
-% \belowdisplayskip=10.0pt plus 2.0pt minus 2.0pt
 
-\AtEndDocument{
-        %     \newpage
-           %   \vspace*{-0.9cm}
+\AtEndDocument{%
 		\myenglishtitle
 }%If there is two multicols, \end{multicols} should be add
 % Needs to go here to have the academic editor in the same column
@@ -357,7 +357,7 @@
 	\section*{\fontsize{12}{12}\selectfont \textbf{References}\vspace{-20pt}} 
 	\addcontentsline{toc}{section}{References}
 	\renewcommand{\baselinestretch}{1.25}
-	\fontsize{7.8}{7.8}\selectfont
+	\fontsize{8}{8}\selectfont
 	\begin{thebibliography}{---}
 	\setlength{\itemsep}{0.6mm}
 }
