@@ -6,10 +6,9 @@
 % Xiu Li
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
 % IDENTIFICATION
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{BD-Math-English}[2018/05/29 BD-Math class]
+\ProvidesClass{BD-Math}[2018/05/29 BD-Math class]
 
 % PRELIMINARY DECLARATIONS--twoside,
 \LoadClass[10.5pt,twoside]{article}
@@ -60,7 +59,7 @@
 \newcounter{proposition}
  \setcounter{proposition}{0}
  \newtheorem{proposition}[definition]{Proposition}
- 
+
 \newcounter{conjecture}
  \setcounter{conjecture}{0}
  \newtheorem{conjecture}[definition]{Conjecture}
@@ -114,9 +113,6 @@
 \RequirePackage{bm}
 \RequirePackage{mathrsfs}
 \RequirePackage{amsmath}
-
-
-
 \RequirePackage{caption} % Figure and table captions
 \RequirePackage[T1]{fontenc}
 
@@ -149,6 +145,7 @@
 
 % Define fonts
 \usepackage{xeCJK} % Support for CJK documents in XeLaTeX
+\RequirePackage{fontspec} % Allows you to use different fonts that are installed on your computer
 \setCJKmainfont{SimSun}
 \setCJKfamilyfont{song}{SimSun}
 \newcommand*{\songti}{\CJKfamily{song}}
@@ -158,15 +155,12 @@
 \newcommand*{\kaiti}{\CJKfamily{kaiti}}
 \setCJKfamilyfont{heiti}{SimHei}
 \newcommand*{\heiti}{\CJKfamily{heiti}}
-\RequirePackage{fontspec} % Allows you to use different fonts that are installed on your computer
-%\usepackage{CJKpunct} % For control Chinese punctuation space
-%\punctstyle{banjiao}
 
 % Section headings
-\titleformat{\section}[block]{\raggedright \fontsize{13.5}{13.5}\selectfont\bfseries} {\thesection\quad} {0pt} {}
+\titleformat{\section}[block]{\raggedright \fontsize{13.5}{13.5}\selectfont\bfseries} {\thesection\space} {0pt} {}
 \titlespacing {\section} {0cm} {0.3cm} {0.2cm}
 
-\titleformat{\subsection}[block]{\raggedright \fontsize{10.5}{10.5}\selectfont\bfseries} {\thesubsection\quad} {0pt} {}
+\titleformat{\subsection}[block]{\raggedright \fontsize{10.5}{10.5}\selectfont\bfseries} {\thesubsection\space} {0pt} {}
 \titlespacing {\subsection} {0pt} {2pt} {2pt}
 
 %%%% Special section title style for back matter
@@ -176,8 +170,8 @@
 % Headers and footers
 \newcommand{\journalname}[1]{\gdef\journalname{#1}}
 \newcommand{\journalvolume}[1]{\gdef\journalvolume{#1}}
-\newcommand{\journalmonth}[1]{\gdef\journalmonth{#1}}
 \newcommand{\journalnumber}[1]{\gdef\journalnumber{#1}}
+\newcommand{\journalmonth}[1]{\gdef\journalmonth{#1}}
 \newcommand{\articledate}[1]{\gdef\articledate{#1}}
 
 % Define header line for first and other page
@@ -295,7 +289,7 @@
               \fontsize{9}{9}\selectfont {\bf  MR(2010) Subject Classification:} \@SubjectClass %
               \ / \ {\bf  CLC number:} \@CLCNum\\
               \fontsize{9}{9}\selectfont {\bf  Document code:} \@documentcode \qquad %
-             {\bf  \fontsize{9}{9}\selectfont Article ID:} \fontsize{9}{9}\selectfont \@pageissn\\      
+             {\bf  \fontsize{9}{9}\selectfont Article ID:} \fontsize{9}{9}\selectfont \@pageissn\\       
 	    \medskip
 	 \end{flushleft}
 	\medskip
@@ -326,7 +320,7 @@
 
 % First page command
 \AtEndPreamble{
-    \setcounter{page}{\@firstpage}
+      \setcounter{page}{\@firstpage}
 	\numberwithin{equation}{section} %Define equation number
 	\numberwithin{definition}{section}
 	\numberwithin{theorem}{section}
@@ -334,8 +328,8 @@
 	\numberwithin{corollary}{section}
 	\numberwithin{remark}{section}
 	\numberwithin{example}{section}
-    \numberwithin{proposition}{section}
-	\numberwithin{case}{section}
+      \numberwithin{proposition}{section}
+      \numberwithin{case}{section}
 	\setcounter{section}{-1}
 }
 
@@ -347,7 +341,9 @@
       \abovedisplayskip=10.0pt plus 2.0pt minus 2.0pt
       \belowdisplayskip=10.0pt plus 2.0pt minus 2.0pt
       \fontsize{10}{10}\selectfont
+     \baselineskip 14.5pt
 }
+
 \AtEndDocument{%
 		\myenglishtitle
 }%If there is two multicols, \end{multicols} should be add
