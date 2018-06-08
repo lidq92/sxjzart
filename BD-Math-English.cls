@@ -1,4 +1,4 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%
+﻿%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Advances in Mathematics 29-05-2018
 % For any information please send an e-mail to:
 % xiu.li@mdpi.com
@@ -85,10 +85,10 @@
 \RequirePackage{titlesec}  % Styles and formatting of section headers
 \RequirePackage{fancyhdr} % Headers and footers
 \RequirePackage{ragged2e} % Text alignment (flushleft/flushright)
-\RequirePackage[left=2.6cm, 
-	right=4.4cm, 
-	top=1.9cm, 
-	bottom=4.75cm, 
+\RequirePackage[left=3.5cm, 
+	right=3.5cm, 
+	top=2.9cm, 
+	bottom=3.75cm, 
 	headsep=0.5mm, % Distance between header and text
 	head=1.6cm,
 	paperwidth=8.5in,
@@ -157,10 +157,10 @@
 \newcommand*{\heiti}{\CJKfamily{heiti}}
 
 % Section headings
-\titleformat{\section}[block]{\raggedright \fontsize{13.5}{13.5}\selectfont\bfseries} {\thesection\space} {0pt} {}
+\titleformat{\section}[block]{\raggedright \fontsize{14.4}{14.4}\selectfont\bfseries} {\thesection\space} {0pt} {}
 \titlespacing {\section} {0cm} {0.3cm} {0.2cm}
 
-\titleformat{\subsection}[block]{\raggedright \fontsize{10.5}{10.5}\selectfont\bfseries} {\thesubsection\space} {0pt} {}
+\titleformat{\subsection}[block]{\raggedright \fontsize{12}{12}\selectfont\bfseries} {\thesubsection\space} {0pt} {}
 \titlespacing {\subsection} {0pt} {2pt} {2pt}
 
 %%%% Special section title style for back matter
@@ -193,16 +193,16 @@
 \addtolength{\footskip}{-0.7cm}	
 	\fancyhead[L]{
 		\leftskip0.0cm
-		\small \fontsize{9}{9}\selectfont  第 \journalvolume 卷第 \journalnumber 期\vspace{1pt}\\
-		 \pubyear 年 \journalmonth 月}
+		\small \fontsize{9}{9}\selectfont  \hspace{-0.2mm}第\hspace{-0mm}\journalvolume\hspace{-0mm}卷第\hspace{0mm}\journalnumber\hspace{0mm}期\vspace{1pt}\\
+		 \pubyear\hspace{-0mm}年\hspace{-0mm}\journalmonth\hspace{-0mm}月}
 		\vspace{3pt} 
 	\fancyhead[C]{
-		\small \fontsize{12}{12}\selectfont \ 数\qquad 学\qquad 进\qquad 展 \vspace{1pt}\\
-		\fontsize{9.5}{9.5}\selectfont ADVANCES IN MATHEMATICS (CHINA)}
+		\small \fontsize{12}{12}\selectfont  \ 数\hspace{6.5mm}学\hspace{6.5mm}进\hspace{6.5mm}展 \vspace{1pt}\\
+		\fontsize{9}{9}\selectfont ADVANCES IN MATHEMATICS (CHINA)}
 		\vspace{3pt}
 	\fancyhead[R]{
 		\rightskip0.0cm
-		\small \fontsize{9}{9}\selectfont  Vol. \journalvolume,\ No. \journalnumber\vspace{1pt}\\
+		\small \fontsize{9}{9}\selectfont  Vol.\ \journalvolume,\ No.\ \journalnumber\vspace{1pt}\\
 		\fontsize{9}{9}\selectfont\articledate, \pubyear}
 		\vspace{3pt}
 }
@@ -212,10 +212,10 @@
 
 % Define footnote format   
 \RequirePackage[hang]{footmisc}
-\setlength{\skip\footins}{0.5cm}
+\setlength{\skip\footins}{0.4cm}
 \setlength{\footnotemargin}{0mm}
 \def\footnoterule{\kern-2\p@
-\hrule \@width 2in height 0.6pt \kern 5.0\p@}
+\hrule \@width 2.3in height 0.5pt \kern 3.0\p@}
 
 % Make command for defining the first page
 \newcommand{\firstpage}[1]{\gdef\@firstpage{#1}}
@@ -264,11 +264,11 @@
       \fontsize{9}{9}\selectfont doi:\  \ \@DOI	\\
 	\end{flushright}
 	\begin{flushleft}
-	\vspace*{0.15cm}
+	\vspace*{0.1cm}
        \begin{center}
-       \renewcommand{\baselinestretch}{1.05}
-	\fontsize{20}{20}\selectfont{\boldmath\bfseries \@EnglishTitle}\footnote{%
-            {Received date:} \@ReceiveDate.\quad {\ifthenelse{\equal{\@ReviseDate}{\@empty}}{}{%
+       \renewcommand{\baselinestretch}{1.1}
+	\fontsize{18}{18}\selectfont{\boldmath\bfseries \@EnglishTitle} \footnote{%
+  {Received date:} \@ReceiveDate.\quad {\ifthenelse{\equal{\@ReviseDate}{\@empty}}{}{%
             {Revised date:} \@ReviseDate.}}\\
 	     {Foundation item:} \@FundItem.\\
 	     {E-mail:} \@CorrsEmail}\\
@@ -302,12 +302,12 @@
 	\noindent
             \renewcommand{\baselinestretch}{1.1}
             \begin{center}
-		\noindent\fontsize{14}{14}\selectfont{\boldmath\bfseries\heiti \@Title}\\
+		\noindent\fontsize{14.4}{14.4}\selectfont{\boldmath\bfseries\heiti \@Title}\\
 		\bigskip	
 		\fontsize{10.5}{10.5}\selectfont\kaiti \@Authors\\
 		\renewcommand{\baselinestretch}{1.3}
               \medskip
-		\fontsize{9.0}{9.0}\selectfont (\@Affiliations\hspace{-0.35em})\\
+		\fontsize{9.0}{9.0}\selectfont (\songti \@Affiliations\hspace{-0.35em})\\
               \end{center}
 	\medskip      
 	\renewcommand{\baselinestretch}{1.25}
@@ -341,7 +341,7 @@
       \abovedisplayskip=10.0pt plus 2.0pt minus 2.0pt
       \belowdisplayskip=10.0pt plus 2.0pt minus 2.0pt
       \fontsize{10}{10}\selectfont
-     \baselineskip 14.5pt
+     \baselineskip 15pt
 }
 
 \AtEndDocument{%
@@ -354,7 +354,7 @@
 % References
 \renewcommand\refname{} % No reference title
 \newcommand{\startbibliography}{%\vspace{2pt}
-	\section*{\fontsize{12}{12}\selectfont \textbf{References}\vspace{-20pt}} 
+	\section*{\fontsize{14.4}{14.4}\selectfont \textbf{References}\vspace{-20pt}} 
 	\addcontentsline{toc}{section}{References}
 	\renewcommand{\baselinestretch}{1.25}
 	\fontsize{8}{8}\selectfont
