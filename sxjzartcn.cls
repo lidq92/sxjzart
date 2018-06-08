@@ -236,7 +236,7 @@ scaled \magstep0 \font\tenbf=cmb10 scaled \magstep0
 \let\thmhead\thmhead@plain
 \makeatother
 
-%%%%% 公示编号随节变化
+%%%%% 公式编号随节变化
 \numberwithin{equation}{section} %
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%Reference
