@@ -87,10 +87,11 @@
 \RequirePackage{ragged2e} % Text alignment (flushleft/flushright)
 \RequirePackage[left=3.5cm, 
 	right=3.5cm, 
-	top=2.9cm, 
-	bottom=3.75cm, 
-	headsep=0.5mm, % Distance between header and text
-	head=1.6cm,
+	top=0.8cm, 
+	bottom=5.5cm, 
+	headsep=0.1mm, % Distance between header and text
+     % includehead,
+	head=0.1cm,
 	paperwidth=8.5in,
 	paperheight=11in]{geometry} % Page size and margins%, 	showframe
 \RequirePackage{xcolor} % Color for logo
@@ -109,7 +110,7 @@
 \RequirePackage{makeidx} 
 \RequirePackage{amssymb} 
 \RequirePackage{amscd}
-\RequirePackage{amsfonts}% 这是Li Dongfeng改的文件头
+\RequirePackage{amsfonts}
 \RequirePackage{bm}
 \RequirePackage{mathrsfs}
 \RequirePackage{amsmath}
@@ -134,7 +135,7 @@
 % Define paragraph spacing and indent value
 \RequirePackage{indentfirst}
 \linespread{1.35} 
-\setlength{\parindent}{0.75cm}
+\setlength{\parindent}{0.7cm}
 \setlength{\parskip}{0.0\baselineskip}
 
 % Disable hyphenation
@@ -155,6 +156,7 @@
 \newcommand*{\kaiti}{\CJKfamily{kaiti}}
 \setCJKfamilyfont{heiti}{SimHei}
 \newcommand*{\heiti}{\CJKfamily{heiti}}
+\newCJKfontfamily\heisongti{SimSun}[AutoFakeBold]
 
 % Section headings
 \titleformat{\section}[block]{\raggedright \fontsize{14.4}{14.4}\selectfont\bfseries} {\thesection\space} {0pt} {}
@@ -258,29 +260,31 @@
 \newcommand{\mymaketitle}{
 	\leftskip0cm
 	\rightskip0cm
-	\vspace*{-25pt}
+	\vspace*{5pt}
 	\noindent
 	\begin{flushright}
-      \fontsize{9}{9}\selectfont doi:\  \ \@DOI	\\
-	\end{flushright}
-	\begin{flushleft}
-	\vspace*{0.1cm}
-       \begin{center}
-       \renewcommand{\baselinestretch}{1.1}
-	\fontsize{18}{18}\selectfont{\boldmath\bfseries \@EnglishTitle} \footnote{%
-  {Received date:} \@ReceiveDate.\quad {\ifthenelse{\equal{\@ReviseDate}{\@empty}}{}{%
+       \renewcommand{\baselinestretch}{1.0}
+      \fontsize{9}{9}\selectfont doi:\  \ \@DOI\footnote{%
+     {Received date:} \@ReceiveDate.\quad {\ifthenelse{\equal{\@ReviseDate}{\@empty}}{}{%
             {Revised date:} \@ReviseDate.}}\\
 	     {Foundation item:} \@FundItem.\\
-	     {E-mail:} \@CorrsEmail}\\
+	     {E-mail:} \@CorrsEmail}	\\
+	\end{flushright}
+	\begin{flushleft}
+	\vspace*{-0.1cm}
+       \begin{center}
+       \renewcommand{\baselinestretch}{1.35}
+	\fontsize{18}{18}\selectfont{%
+      \boldmath\bfseries \@EnglishTitle} \\
 		\bigskip
 		\fontsize{12}{12}\selectfont \@EnglishAuthors\\
            \end{center}
               \medskip
-            \parindent=0.75cm      
+            \parindent=0.7cm      
             \renewcommand{\baselinestretch}{1.35}
 		\fontsize{9}{9}\selectfont({\@EnglishAffiliations})\\
               \medskip
-              \parindent=0.75cm 
+              \parindent=0.7cm 
                \leftskip0.55cm
                \rightskip0.55cm
                \renewcommand{\baselinestretch}{1.35} 
@@ -302,7 +306,7 @@
 	\noindent
             \renewcommand{\baselinestretch}{1.1}
             \begin{center}
-		\noindent\fontsize{14.4}{14.4}\selectfont{\boldmath\bfseries\heiti \@Title}\\
+		\noindent\fontsize{14.4}{14.4}\selectfont{\boldmath\bf\heisongti \@Title}\\
 		\bigskip	
 		\fontsize{10.5}{10.5}\selectfont\kaiti \@Authors\\
 		\renewcommand{\baselinestretch}{1.3}
@@ -311,8 +315,8 @@
               \end{center}
 	\medskip      
 	\renewcommand{\baselinestretch}{1.25}
-	\fontsize{10.0}{10.0}\selectfont{\hspace{0.75cm}{\bfseries\heiti 摘要：}}\fsong\@Abstract\\
-	\noindent{\hspace{0.75cm}{\bfseries\heiti 关键词：}} \fsong\@Keywords\\
+	\fontsize{10.0}{10.0}\selectfont{\hspace{0.75cm}{\bf\heisongti 摘要：}}\fsong\@Abstract\\
+	\noindent{\hspace{0.75cm}{\bf\heisongti 关键词：}} \fsong\@Keywords\\
 	\smallskip
 	\end{flushleft}
 	\smallskip
