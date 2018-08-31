@@ -28,10 +28,10 @@
 \LoadClass{cctart}
 \RequirePackage{ifpdf}
 \RequirePackage{graphicx,subfigure,picins,psfrag,epstopdf}
-\graphicspath{{./figs/}} % {{dir1},{dir2},{dir3}} % Í¼Æ¬Â·¾¶
+\graphicspath{{./figs/}} % {{dir1},{dir2},{dir3}} % å›¾ç‰‡è·¯å¾„
 \usepackage{multirow}
 \RequirePackage{amsmath,amsthm,makeidx,amssymb,amsfonts,amscd,mathrsfs,bm,headrule}
-\RequirePackage[numbers,sort&compress]{natbib}\setlength{\bibsep}{0.5ex} % ËõĞ¡²Î¿¼ÎÄÏ×Ö®¼äµÄ´¹Ö±¼ä¾à
+\RequirePackage[numbers,sort&compress]{natbib}\setlength{\bibsep}{0.5ex} % ç¼©å°å‚è€ƒæ–‡çŒ®ä¹‹é—´çš„å‚ç›´é—´è·
 \RequirePackage{xcolor} % Color for logo
 \definecolor{bluecite}{HTML}{0875b7}
 \RequirePackage[colorlinks,
@@ -53,7 +53,7 @@
 \renewcommand\baselinestretch{1.0}
 \abovedisplayskip=10.0pt plus 2.0pt minus 2.0pt
 \belowdisplayskip=10.0pt plus 2.0pt minus 2.0pt
-\allowdisplaybreaks[4]  %%¹«Ê½×Ô¶¯¶ÏĞĞ
+\allowdisplaybreaks[4]  %%å…¬å¼è‡ªåŠ¨æ–­è¡Œ
 \newfam\cryfam
 \newfam\smbfam
 \newfont{\htxt}{eufm10 scaled \magstep0}
@@ -95,13 +95,13 @@ scaled \magstep0 \font\tenbf=cmb10 scaled \magstep0
   \let\@oddfoot\@empty\let\@evenfoot\@empty
   \def\@evenhead{%
     \pushziti\vbox{\hbox to\textwidth{\rlap{\small\thepage}
-    \hfill {\zihao{-5}\songti Êı\qquad Ñ§\qquad ½ø\qquad Õ¹}
-    \hfill {\small\pubvol}{\zihao{-5}\songti ¾í}
+    \hfill {\zihao{-5}\songti æ•°\qquad å­¦\qquad è¿›\qquad å±•}
+    \hfill {\small\pubvol}{\zihao{-5}\songti å·}
   \hspace{-1mm}}\protect\vspace{2truemm}\relax
     \hrule depth0pt height0.15truemm width\textwidth}\popziti}
   \def\@oddhead{%
     \pushziti\vbox{\hbox to\textwidth{
-    {\hspace{-1mm}\small\pubno}{\zihao{-5}\songti ÆÚ}\hfill
+    {\hspace{-1mm}\small\pubno}{\zihao{-5}\songti æœŸ}\hfill
     {\small\zihao{-5}\songti \titlemark}\hfill
     \llap{\small\thepage}}
     \protect\vspace{2truemm}\relax
@@ -118,14 +118,14 @@ scaled \magstep0 \font\tenbf=cmb10 scaled \magstep0
 \newcommand*\BeginTitle{%
   \vspace*{-13mm}%
   \thispagestyle{empty}%
-  \noindent \hbox to \textwidth{\small{\zihao{-5}\songti µÚ}%
-  \pubvol{\zihao{-5}\songti ¾í µÚ}%
-  \pubno{\zihao{-5}\songti ÆÚ}%
-  \hfill{\zihao{-4} Êı\qquad Ñ§\qquad½ø\qquadÕ¹}%
+  \noindent \hbox to \textwidth{\small{\zihao{-5}\songti ç¬¬}%
+  \pubvol{\zihao{-5}\songti å· ç¬¬}%
+  \pubno{\zihao{-5}\songti æœŸ}%
+  \hfill{\zihao{-4} æ•°\qquad å­¦\qquadè¿›\qquadå±•}%
   \hfill Vol.~\pubvol, No.~\pubno} \vskip -0.5mm
   \par\noindent%
-  \hbox to \textwidth{\small\pubyear{\zihao{-5}\songtiÄê}%
-  \pubmonth{\zihao{-5}\songti ÔÂ}%
+  \hbox to \textwidth{\small\pubyear{\zihao{-5}\songtiå¹´}%
+  \pubmonth{\zihao{-5}\songti æœˆ}%
   \hfill  ADVANCES IN MATHEMATICS (CHINA)
   \hfill \shortmonthname{\pubmonth}, \pubyear} \vskip -.8mm %
   \par\noindent %
@@ -147,16 +147,16 @@ scaled \magstep0 \font\tenbf=cmb10 scaled \magstep0
 }
 \newcommand*\CAbstract[1]{%
   \begingroup\vskip.2in\narrower\zihao{-5}\small
-    \indent\indent{\heiti\bf ÕªÒª:}\fangsong\ \  #1%
+    \indent\indent{\heiti\bf æ‘˜è¦:}\fangsong\ \  #1%
   \par \endgroup}
-\newcommand*\CKeywords[2][¹Ø¼ü´Ê]{%
+\newcommand*\CKeywords[2][å…³é”®è¯]{%
   \begingroup\narrower\zihao{-5}\small
     \indent\indent{\heiti\bf #1:}\fangsong\ \ #2%
   \par\endgroup}
 \newcommand*\CMRCLClass[2]{%
   \begingroup\narrower\zihao{-5}\small
-    \indent\indent{\heiti\bf MR(2010)Ö÷Ìâ·ÖÀà:}\ \ #1 / {\heiti\bf ÖĞÍ¼·ÖÀàºÅ:}\ \ #2\\%
-	\indent{\heiti\bf ÎÄÕÂ±êÊ¶Âë:}\ \ \documentcode \qquad {\heiti\zihao{-5}\bf ÎÄÕÂ±àºÅ:}\ \ \paperid%
+    \indent\indent{\heiti\bf MR(2010)ä¸»é¢˜åˆ†ç±»:}\ \ #1 / {\heiti\bf ä¸­å›¾åˆ†ç±»å·:}\ \ #2\\%
+	\indent{\heiti\bf æ–‡ç« æ ‡è¯†ç :}\ \ \documentcode \qquad {\heiti\zihao{-5}\bf æ–‡ç« ç¼–å·:}\ \ \paperid%
   \par\endgroup}
 \newcommand*\EndTitle{\normalsize\songti \baselineskip 13pt \vskip.2in}
 
@@ -180,7 +180,7 @@ scaled \magstep0 \font\tenbf=cmb10 scaled \magstep0
     \indent{\heiti\bf #1:}\rm\ \ #2%
   \par\endgroup}
   
-\setcounter{section}{-1} % Section´Ó0¿ªÊ¼
+\setcounter{section}{-1} % Sectionä»0å¼€å§‹
 \newcommand*\Section[2][]{%
   \edef\ams@temp{#1}
   \ifx\ams@temp\@empty\addtocounter{section}{1}
@@ -204,31 +204,31 @@ scaled \magstep0 \font\tenbf=cmb10 scaled \magstep0
   \vskip.07in \flushpar{\bf\zihao{5}\heiti\thesubsubsection\ \ #2} \vskip.05in
 }
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%ÉèÖÃ¶¨Àí»·¾³
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%è®¾ç½®å®šç†ç¯å¢ƒ
 \theoremstyle{definition}
 \newtheoremstyle{mythm}{0ex}{0ex}
    {\songti}{\parindent}{\songti\bf }{}{1em}{}
-%\newtheoremstyle{mythm}{1ex}{1ex}%¶¨Àí»·¾³µÄÉÏÏÂ¼ä¾à.
-%{\CJKfamily{song}}{\parindent}{\CJKfamily{hei} \bf}{}{1em}{}%¶¨ÀíÄÚÈİÎªËÎÌå, Ëõ½ø, ¶¨ÀíÃû³ÆÎªºÚ´ÖÌå
-\theoremstyle{mythm}%ÉèÖÃ¶¨Àí»·¾³
-\newtheorem{theorem}{¶¨Àí\relax}[section]
+%\newtheoremstyle{mythm}{1ex}{1ex}%å®šç†ç¯å¢ƒçš„ä¸Šä¸‹é—´è·.
+%{\CJKfamily{song}}{\parindent}{\CJKfamily{hei} \bf}{}{1em}{}%å®šç†å†…å®¹ä¸ºå®‹ä½“, ç¼©è¿›, å®šç†åç§°ä¸ºé»‘ç²—ä½“
+\theoremstyle{mythm}%è®¾ç½®å®šç†ç¯å¢ƒ
+\newtheorem{theorem}{å®šç†\relax}[section]
 
-\newtheorem{lemma}{ÒıÀí\relax}[section]
-\newtheorem{property}{ĞÔÖÊ\relax}[section]
-\newtheorem{proposition}{ÃüÌâ\relax}[section]
-\newtheorem{question}{ÎÊÌâ\relax}[section]
-\newtheorem{corollary}{ÍÆÂÛ\relax}[section]
-\newtheorem{definition}{¶¨Òå\relax}[section]
-\newtheorem{remark}{×¢\relax}[section]
-\newtheorem{example}{Àı\relax}[section]
+\newtheorem{lemma}{å¼•ç†\relax}[section]
+\newtheorem{property}{æ€§è´¨\relax}[section]
+\newtheorem{proposition}{å‘½é¢˜\relax}[section]
+\newtheorem{question}{é—®é¢˜\relax}[section]
+\newtheorem{corollary}{æ¨è®º\relax}[section]
+\newtheorem{definition}{å®šä¹‰\relax}[section]
+\newtheorem{remark}{æ³¨\relax}[section]
+\newtheorem{example}{ä¾‹\relax}[section]
 
-\newtheorem{exercise}{Á·Ï°\relax}[section]
-\newtheorem{assumpation}{¼ÙÉè\relax}[section]
-\newtheorem{notation}{¼ÇºÅ\relax}[section]
+\newtheorem{exercise}{ç»ƒä¹ \relax}[section]
+\newtheorem{assumpation}{å‡è®¾\relax}[section]
+\newtheorem{notation}{è®°å·\relax}[section]
 
-\newenvironment{Proof}[1][Proof]{\heiti\bf Ö¤Ã÷\!\quad\rm}
+\newenvironment{Proof}[1][Proof]{\heiti\bf è¯æ˜\!\quad\rm}
 {\hfill $\Box$}
-%%%%% È¥³ı¶¨ÀíÖĞ¿ÉÑ¡TitleµÄÀ¨ºÅ
+%%%%% å»é™¤å®šç†ä¸­å¯é€‰Titleçš„æ‹¬å·
 \makeatletter
 \def\thmhead@plain#1#2#3{%
   \thmname{#1}\thmnumber{\@ifnotempty{#1}{ }\@upn{#2}}%
@@ -236,27 +236,20 @@ scaled \magstep0 \font\tenbf=cmb10 scaled \magstep0
 \let\thmhead\thmhead@plain
 \makeatother
 
-%%%%% ¹«Ê½±àºÅËæ½Ú±ä»¯
+%%%%% å…¬å¼ç¼–å·éšèŠ‚å˜åŒ–
 \numberwithin{equation}{section} %
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%Reference
 \newcommand*\Thanks[1]{%
-  \vskip 8pt{\heiti\bf\relax ÖÂĞ»}\quad #1\par}
-\renewcommand\refname{\leftline{\large\bf\heiti\zihao{-4}²Î¿¼ÎÄÏ×}}
+  \vskip 8pt{\heiti\bf\relax è‡´è°¢}\quad #1\par}
+\renewcommand\refname{\leftline{\large\bf\heiti\zihao{-4}å‚è€ƒæ–‡çŒ®}}
 \newcommand\BeginRef{ \baselineskip 13pt \footnotesize \parindent=4.75mm
 \begin{thebibliography}{99}}
 \newcommand\EndRef{\end{thebibliography}} 
 \newcommand*\REF[1]{\bibitem{#1}} 
 
-%%%%% Or use xsparse
-\makeatletter
-\newcommand{\supercite@}[1]{\textsuperscript{\cite{#1}}}
-\newcommand{\supercite@double}[2]{\textsuperscript{\cite[#2]{#1}}}
-\newcommand{\supercite}[1]{%
-  \@ifnextchar\bgroup
-    {\supercite@double{#1}}{\supercite@{#1}}}
-\makeatother
-\newcommand*\ucite[1]{\textsuperscript{\cite{#1}}}
+\newcommand*\supercite[2][]{\textsuperscript{\cite[#1]{#2}}}
+\newcommand*\ucite[2][]{\textsuperscript{\cite[#1]{#2}}}
 
 \endinput
 %%
