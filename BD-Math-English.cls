@@ -1,27 +1,24 @@
-﻿%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Advances in Mathematics 29-05-2018
-% For any information please send an e-mail to:
-% xiu.li@mdpi.com
-% Class modified by:
-% Xiu Li
-%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% IDENTIFICATION
+%%Identification
+%%The class identifies itself and the LaTeX version needed
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{BD-Math}[2018/05/29 BD-Math class]
+\ProvidesClass{sxjzarten}[2018/06/11 Advances in Mathematics class]
 
-% PRELIMINARY DECLARATIONS--twoside,
+%%Preliminary definitions, needed by the options
 \LoadClass[10.5pt,twoside]{article}
 
-% OPTIONS
+%%This parts handles the options passed to the class.
+\DeclareOption{onecolumn}{\OptionNotUsed}
+\DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
 \ProcessOptions\relax
+
+%%Body of the class, most of the declarations appear here.
 
 \RequirePackage{amsthm} 
 \newtheoremstyle{newstyle} % Name 
 {0pt}% space above
 {0pt}% space below
 {\upshape}% body font
-{0.75cm}% indent amount 1
+{0.69cm}% indent amount 1
 {\bfseries}% theorem head font
 {}% punctuation after theorem head
 {0pt}% space after theorem head
@@ -34,39 +31,39 @@
  
   \newcounter{theorem}
  \setcounter{theorem}{0}
- \newtheorem{theorem}[definition]{Theorem}
+ \newtheorem{theorem}[theorem]{Theorem}
  
  \newcounter{lemma}
  \setcounter{lemma}{0}
- \newtheorem{lemma}[definition]{Lemma}
+ \newtheorem{lemma}[lemma]{Lemma}
  
  \newcounter{corollary}
  \setcounter{corollary}{0}
- \newtheorem{corollary}[definition]{Corollary}
+ \newtheorem{corollary}[corollary]{Corollary}
 
 \newcounter{remark}
  \setcounter{remark}{0}
- \newtheorem{remark}[definition]{Remark}
+ \newtheorem{remark}[remark]{Remark}
  
  \newcounter{case}
  \setcounter{case}{0}
- \newtheorem{case}[definition]{Case}
+ \newtheorem{case}[case]{Case}
 
 \newcounter{example}
  \setcounter{example}{0}
- \newtheorem{example}[definition]{Example}
+ \newtheorem{example}[example]{Example}
 
 \newcounter{proposition}
  \setcounter{proposition}{0}
- \newtheorem{proposition}[definition]{Proposition}
+ \newtheorem{proposition}[proposition]{Proposition}
 
 \newcounter{conjecture}
  \setcounter{conjecture}{0}
- \newtheorem{conjecture}[definition]{Conjecture}
+ \newtheorem{conjecture}[conjecture]{Conjecture}
 
 \renewcommand{\qed}{\unskip\nobreak\hfill\qedsymbol} %% This places the symbol right after the text instead of placing it at the end on the line.
 
-\renewenvironment{proof}[1][\proofname]{\par %% \proofname allows to have "Proof of my theorem"
+\renewenvironment{proof}[1][Proof]{\par %% \proofname allows to have "Proof of my theorem"
   \pushQED{\qed}%
   \normalfont \topsep0\p@\@plus0\p@\relax
   \trivlist
@@ -85,14 +82,15 @@
 \RequirePackage{titlesec}  % Styles and formatting of section headers
 \RequirePackage{fancyhdr} % Headers and footers
 \RequirePackage{ragged2e} % Text alignment (flushleft/flushright)
-\RequirePackage[left=3.5cm, 
-	right=3.5cm, 
-	top=2.9cm, 
-	bottom=3.75cm, 
-	headsep=0.5mm, % Distance between header and text
-	head=1.6cm,
-	paperwidth=8.5in,
-	paperheight=11in]{geometry} % Page size and margins%, 	showframe
+\RequirePackage[left=3.1cm, 
+	right=3.2cm, 
+	top=2.8cm, 
+	bottom=5.9cm, 
+	headsep=-0.5mm, % Distance between header and text
+	%%head=1.6cm,
+	%%footskip=2mm,
+	paperwidth=21cm,
+	paperheight=29.7cm]{geometry} % Page size and margins%, 	showframe
 \RequirePackage{xcolor} % Color for logo
 \RequirePackage{soul} % For highlighting text
 \RequirePackage{multirow} % For typesetting the text in two columns
@@ -104,12 +102,12 @@
 	urlcolor=black,
 	pdfborder={0 0 0},
 	unicode=true]{hyperref}
-\RequirePackage[sort&compress]{natbib} % Citations sort
+\RequirePackage[numbers,sort&compress,square]{natbib} % Citations sort
 \bibpunct{}{}{,}{n}{}{;}
 \RequirePackage{makeidx} 
 \RequirePackage{amssymb} 
 \RequirePackage{amscd}
-\RequirePackage{amsfonts}% 这是Li Dongfeng改的文件头
+\RequirePackage{amsfonts}
 \RequirePackage{bm}
 \RequirePackage{mathrsfs}
 \RequirePackage{amsmath}
@@ -134,7 +132,7 @@
 % Define paragraph spacing and indent value
 \RequirePackage{indentfirst}
 \linespread{1.35} 
-\setlength{\parindent}{0.75cm}
+\setlength{\parindent}{0.7cm}
 \setlength{\parskip}{0.0\baselineskip}
 
 % Disable hyphenation
@@ -144,17 +142,9 @@
 \sloppy
 
 % Define fonts
-\usepackage{xeCJK} % Support for CJK documents in XeLaTeX
+\RequirePackage[UTF8]{ctex}
 \RequirePackage{fontspec} % Allows you to use different fonts that are installed on your computer
-\setCJKmainfont{SimSun}
-\setCJKfamilyfont{song}{SimSun}
-\newcommand*{\songti}{\CJKfamily{song}}
-\setCJKfamilyfont{fsong}{FangSong}
-\newcommand*{\fsong}{\CJKfamily{fsong}}
-\setCJKfamilyfont{kaiti}{KaiTi}
-\newcommand*{\kaiti}{\CJKfamily{kaiti}}
-\setCJKfamilyfont{heiti}{SimHei}
-\newcommand*{\heiti}{\CJKfamily{heiti}}
+
 
 % Section headings
 \titleformat{\section}[block]{\raggedright \fontsize{14.4}{14.4}\selectfont\bfseries} {\thesection\space} {0pt} {}
@@ -224,13 +214,13 @@
 \newcommand{\pubyear}[1]{\gdef\pubyear{#1}}
 \newcommand{\Title}[1]{\gdef\@Title{#1}}
 \newcommand{\Authors}[1]{\gdef\@Authors{#1}}
-\newcommand{\AuthorNames}[1]{\gdef\@AuthorNames{#1}}
 \newcommand{\Affiliations}[1]{\gdef\@Affiliations{#1}}
 \newcommand{\Abstract}[1]{\gdef\@Abstract{#1}}
 \newcommand{\Keywords}[1]{\gdef\@Keywords{#1}}
 \newcommand{\documentcode}[1]{\gdef\@documentcode{#1}}
 \newcommand{\DOI}[1]{\gdef\@DOI{#1}}
 \newcommand{\EnglishTitle}[1]{\gdef\@EnglishTitle{#1}}
+\newcommand{\EnglishShortTitle}[1]{\gdef\@EnglishShortTitle{#1}}
 \newcommand{\EnglishAuthors}[1]{\gdef\@EnglishAuthors{#1}}
 \newcommand{\EnglishAffiliations}[1]{\gdef\@EnglishAffiliations{#1}}
 \newcommand{\EnglishAbstract}[1]{\gdef\@EnglishAbstract{#1}}
@@ -247,7 +237,7 @@
 % Headers and footers on all  pages except first
 \pagestyle{fancy}
 \fancyhead[OL]{\fontsize{9}{9}\selectfont No.\ \journalnumber \vspace{1.5pt}}
-\fancyhead[OC]{\fontsize{9}{9}\selectfont \@EnglishAuthorNames: \@EnglishTitle \vspace{1.5pt}}
+\fancyhead[OC]{\fontsize{9}{9}\selectfont \@EnglishAuthorNames: \@EnglishShortTitle \vspace{1.5pt}}
 \fancyhead[OR]{\fontsize{9}{9}\selectfont\thepage{}\vspace{1.5pt}}
 \fancyhead[EL]{\fontsize{9}{9}\selectfont \thepage{}\vspace{1.5pt}}
 \fancyhead[EC]{\fontsize{9}{9}\selectfont ADVANCES IN MATHEMATICS (CHINA) \vspace{1.5pt}}
@@ -258,38 +248,41 @@
 \newcommand{\mymaketitle}{
 	\leftskip0cm
 	\rightskip0cm
-	\vspace*{-25pt}
+	\vspace*{5pt}
 	\noindent
 	\begin{flushright}
-      \fontsize{9}{9}\selectfont doi:\  \ \@DOI	\\
-	\end{flushright}
-	\begin{flushleft}
-	\vspace*{0.1cm}
-       \begin{center}
-       \renewcommand{\baselinestretch}{1.1}
-	\fontsize{18}{18}\selectfont{\boldmath\bfseries \@EnglishTitle} \footnote{%
-  {Received date:} \@ReceiveDate.\quad {\ifthenelse{\equal{\@ReviseDate}{\@empty}}{}{%
+      \vspace{-0.11cm} \renewcommand{\baselinestretch}{1.0}
+      \fontsize{9}{9}\selectfont doi:\  \ \@DOI\footnote{%
+     {Received date:} \@ReceiveDate.\quad {\ifthenelse{\equal{\@ReviseDate}{\@empty}}{}{%
             {Revised date:} \@ReviseDate.}}\\
 	     {Foundation item:} \@FundItem.\\
-	     {E-mail:} \@CorrsEmail}\\
+	     {E-mail:} \@CorrsEmail}	\\
+	\end{flushright}
+	\begin{flushleft}
+	\vspace*{-0.1cm}
+       \begin{center}
+       \renewcommand{\baselinestretch}{1.35}
+	\fontsize{18}{18}\selectfont{%
+      \boldmath\bfseries \@EnglishTitle} \\
 		\bigskip
 		\fontsize{12}{12}\selectfont \@EnglishAuthors\\
            \end{center}
               \medskip
-            \parindent=0.75cm      
+			     \vspace{0.15cm} 
+            \parindent=0.7cm      
             \renewcommand{\baselinestretch}{1.35}
-		\fontsize{9}{9}\selectfont({\@EnglishAffiliations})\\
+		\fontsize{9}{9}\selectfont({\it\@EnglishAffiliations})\\
               \medskip
-              \parindent=0.75cm 
+              \parindent=0.6cm 
                \leftskip0.55cm
                \rightskip0.55cm
-               \renewcommand{\baselinestretch}{1.35} 
-	        \fontsize{9}{9}\selectfont {\bf Abstract:} \@EnglishAbstract\\
-              \fontsize{9}{9}\selectfont {\bf  Keywords:} \@EnglishKeywords\\
-              \fontsize{9}{9}\selectfont {\bf  MR(2010) Subject Classification:} \@SubjectClass %
-              \ / \ {\bf  CLC number:} \@CLCNum\\
-              \fontsize{9}{9}\selectfont {\bf  Document code:} \@documentcode \qquad %
-             {\bf  \fontsize{9}{9}\selectfont Article ID:} \fontsize{9}{9}\selectfont \@pageissn\\       
+                 \vspace{0.25cm}  \renewcommand{\baselinestretch}{1.35} 
+	        \fontsize{9}{9}\selectfont {\bfseries Abstract:} \@EnglishAbstract\\
+              \fontsize{9}{9}\selectfont {\bfseries  Keywords:} \@EnglishKeywords\\
+              \fontsize{9}{9}\selectfont {\bfseries  MR(2010) Subject Classification:} \@SubjectClass %
+              \ / \ {\bfseries  CLC number:} \@CLCNum\\
+              \fontsize{9}{9}\selectfont {\bfseries  Document code:} \@documentcode \qquad %
+             {\bfseries  \fontsize{9}{9}\selectfont Article ID:} \fontsize{9}{9}\selectfont \@pageissn\\       
 	    \medskip
 	 \end{flushleft}
 	\medskip
@@ -302,17 +295,18 @@
 	\noindent
             \renewcommand{\baselinestretch}{1.1}
             \begin{center}
-		\noindent\fontsize{14.4}{14.4}\selectfont{\boldmath\bfseries\heiti \@Title}\\
+		\noindent\fontsize{14.4}{14.4}\selectfont{\boldmath\heiti\bf \@Title}\\
 		\bigskip	
-		\fontsize{10.5}{10.5}\selectfont\kaiti \@Authors\\
-		\renewcommand{\baselinestretch}{1.3}
-              \medskip
-		\fontsize{9.0}{9.0}\selectfont (\songti \@Affiliations\hspace{-0.35em})\\
-              \end{center}
-	\medskip      
+		\fontsize{10.5}{10.5}\selectfont\kaishu \@Authors\\
+		   \end{center}
+		\renewcommand{\baselinestretch}{1.3}    
+              \parindent=0.6cm          
+		\fontsize{9.0}{9.0}\selectfont {\indent\indent\songti \@Affiliations}\\
+	        \medskip    
+			 \vskip.1in 
 	\renewcommand{\baselinestretch}{1.25}
-	\fontsize{10.0}{10.0}\selectfont{\hspace{0.75cm}{\bfseries\heiti 摘要：}}\fsong\@Abstract\\
-	\noindent{\hspace{0.75cm}{\bfseries\heiti 关键词：}} \fsong\@Keywords\\
+	\fontsize{10.0}{10.0}\selectfont{\hspace{-0.12cm}{\bf\heiti\ 摘要: }}\fangsong\@Abstract\\
+	\indent{{\bf\heiti 关键词: }} \fangsong\@Keywords\\
 	\smallskip
 	\end{flushleft}
 	\smallskip
@@ -353,14 +347,20 @@
 
 % References
 \renewcommand\refname{} % No reference title
-\newcommand{\startbibliography}{%\vspace{2pt}
-	\section*{\fontsize{14.4}{14.4}\selectfont \textbf{References}\vspace{-20pt}} 
+\newcommand{\BeginRef}{%\vspace{2pt}
+	\section*{\fontsize{14.4}{14.4}\selectfont \textbf{References}\vspace{-25pt}} 
 	\addcontentsline{toc}{section}{References}
 	\renewcommand{\baselinestretch}{1.25}
 	\fontsize{8}{8}\selectfont
 	\begin{thebibliography}{---}
 	\setlength{\itemsep}{0.6mm}
+	\baselineskip 11pt
 }
-
+\newcommand{\EndRef}{%\vspace{2pt}
+    \end{thebibliography}}
+	%%%%% Or use xsparse
+\let\oldcite\cite
+\renewcommand*\cite[2][]{[{\oldcite[#1]{#2}}]}
+\newcommand*\supercite[2][]{\textsuperscript{\cite[#1]{#2}}}
+\newcommand*\ucite[2][]{\textsuperscript{\cite[#1]{#2}}}
 \endinput
-
