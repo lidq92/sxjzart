@@ -107,14 +107,14 @@ scaled \magstep0 \font\tenbf=cmb10 scaled \magstep0
 \newcommand*\BeginTitle{%
   \vspace*{-13mm}%
   \thispagestyle{empty}%
-  \noindent \hbox to \textwidth{\small{\zihao{-5}\songti µÚ}%
-  \pubvol{\zihao{-5}\songti ¾í µÚ}%
-  \pubno{\zihao{-5}\songti ÆÚ}%
-  \hfill{\zihao{-4} Êı\qquad Ñ§\qquad½ø\qquadÕ¹}%
+  \noindent \hbox to \textwidth{\small{\zihao{-5}\songti ç¬¬}%
+  \pubvol{\zihao{-5}\songti å· ç¬¬}%
+  \pubno{\zihao{-5}\songti æœŸ}%
+  \hfill{\zihao{-4} æ•°\qquad å­¦\qquadè¿›\qquadå±•}%
   \hfill Vol.~\pubvol, No.~\pubno} \vskip -0.5mm
   \par\noindent%
-  \hbox to \textwidth{\small\pubyear{\zihao{-5}\songtiÄê}%
-  \pubmonth{\zihao{-5}\songti ÔÂ}%
+  \hbox to \textwidth{\small\pubyear{\zihao{-5}\songtiå¹´}%
+  \pubmonth{\zihao{-5}\songti æœˆ}%
   \hfill  ADVANCES IN MATHEMATICS (CHINA)
   \hfill \shortmonthname{\pubmonth}, \pubyear} \vskip -.8mm %
   \par\noindent %
@@ -160,19 +160,19 @@ scaled \magstep0 \font\tenbf=cmb10 scaled \magstep0
 }
 \newcommand*\CAbstract[1]{%
   \begingroup\vskip.2in\narrower\zihao{-5}\small
-    {\heiti\bf Õª\quad Òª:}\fangsong\quad #1%
+    {\heiti\bf æ‘˜\quad è¦:}\fangsong\quad #1%
   \par\vskip.1in\endgroup}
-\newcommand*\CKeywords[2][¹Ø¼ü´Ê]{%
+\newcommand*\CKeywords[2][å…³é”®è¯]{%
   \begingroup\narrower\zihao{-5}\small
     {\heiti\bf #1:}\fangsong\quad #2%
   \par\endgroup}
 \newcommand*\CMRCLClass[2]{%
   \begingroup\narrower\zihao{-5}\small
-    {\heiti\bf MR(2010)Ö÷Ìâ·ÖÀà:}\ \ #1 / {\heiti\bf ÖĞÍ¼·ÖÀà:}\ \ #2\\%
-	\indent{\heiti\bf ÎÄÕÂ±êÊ¶Âë:}\ \ \documentcode \qquad {\heiti\zihao{-5}\bf ÎÄÕÂ±àºÅ:}\ \ \paperid%
+    {\heiti\bf MR(2010)ä¸»é¢˜åˆ†ç±»:}\ \ #1 / {\heiti\bf ä¸­å›¾åˆ†ç±»:}\ \ #2\\%
+	\indent{\heiti\bf æ–‡ç« æ ‡è¯†ç :}\ \ \documentcode \qquad {\heiti\zihao{-5}\bf æ–‡ç« ç¼–å·:}\ \ \paperid%
   \par\endgroup}
 
-\setcounter{section}{-1} % Section´Ó0¿ªÊ¼
+\setcounter{section}{-1} % Sectionä»0å¼€å§‹
 \newcommand*\Section[2][]{%
   \edef\ams@temp{#1}
   \ifx\ams@temp\@empty\addtocounter{section}{1}
@@ -227,7 +227,7 @@ scaled \magstep0 \font\tenbf=cmb10 scaled \magstep0
 \renewcommand{\figurename}{Figure}
 \renewcommand{\tablename}{Table}
 
-%%%%% ¹«Ê¾±àºÅËæ½Ú±ä»¯
+%%%%% å…¬ç¤ºç¼–å·éšèŠ‚å˜åŒ–
 \numberwithin{equation}{section} %
 
 \newcommand*\Thanks[1]{%
@@ -239,15 +239,8 @@ scaled \magstep0 \font\tenbf=cmb10 scaled \magstep0
 \newcommand\EndRef{\end{thebibliography}}
 \newcommand*\REF[1]{\bibitem{#1}}
 
-%%%%% Or use xsparse
-\makeatletter
-\newcommand{\supercite@}[1]{\textsuperscript{\cite{#1}}}
-\newcommand{\supercite@double}[2]{\textsuperscript{\cite[#2]{#1}}}
-\newcommand{\supercite}[1]{%
-  \@ifnextchar\bgroup
-    {\supercite@double{#1}}{\supercite@{#1}}}
-\makeatother
-%\newcommand*\supercite[1]{\textsuperscript{\cite{#1}}}
+\newcommand*\supercite[2][]{\textsuperscript{\cite[#1]{#2}}}
+\newcommand*\ucite[2][]{\textsuperscript{\cite[#1]{#2}}}
 
 \endinput
 %%

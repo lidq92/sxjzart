@@ -24,7 +24,7 @@
 \cite{文献1}
 \cite[定理A]{文献1}
 \supercite{文献1} or \ucite{文献1} 引用在上标的位置
-\supercite{文献1}{定理A}
+\supercite[定理A]{文献1} or \ucite[定理A]{文献1}
 ```
 
 ### 公式图表等的引用
